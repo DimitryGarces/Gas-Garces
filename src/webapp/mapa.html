@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa</title>
+    <!-- Incluye la biblioteca LeafletJS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        /* Estilo para el contenedor del mapa */
+        #map-container {
+            width: 50%; /* El mapa ocupa la mitad de la pantalla */
+            height: 100vh; /* Altura igual al 100% del viewport */
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para el mapa -->
+    <div id="map-container"></div>
+
+    <script>
+        // Crea un mapa centrado en Toluca de Lerdo, México
+        var mymap = L.map('map-container').setView([19.2921, -99.6532], 13);
+
+        // Carga un mapa base de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(mymap);
+    </script>
+</body>
+</html>
