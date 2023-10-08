@@ -2,7 +2,7 @@
 
 try {
     $con = mysqli_init();
-    mysqli_ssl_set($con, NULL, NULL, "src/webapp/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    mysqli_ssl_set($con, NULL, NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
     mysqli_real_connect($con, "databasenube01.mysql.database.azure.com", "adminnube", "Bleach123!", "gasgarces", 3306, MYSQLI_CLIENT_SSL);
     
     if ($con->connect_error) {

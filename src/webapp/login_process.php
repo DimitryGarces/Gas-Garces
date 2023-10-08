@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql_empleado = "SELECT Empleado.Id_Empleado
         FROM Empleado
         INNER JOIN DatosPersonales ON Empleado.Id_Datos = DatosPersonales.Id_Datos
-        WHERE DatosPersonales.Empleado = ? 
+        WHERE DatosPersonales.Usuario = ? 
         AND DatosPersonales.Contrasenia = ?";
 
         // Prepara la consulta para el empleado
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Credenciales incorrectas, redirige con un mensaje de error
         $mensaje_error = "Credenciales incorrectas. Intente nuevamente.";
-        header("Location: inicio_sesion.html?error=" . urlencode($mensaje_error));
+        header("Location: InicioSesion.php?error=" . urlencode($mensaje_error));
         exit();
 
         // Cierra las consultas preparadas

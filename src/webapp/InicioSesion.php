@@ -9,6 +9,12 @@
 <body>
     <div class="formulario">
         <h1>Inicio de Sesión</h1>
+                <!-- Muestra el mensaje de error si existe -->
+                <?php
+                if (isset($_GET['error'])) {
+                    echo '<div class="error-message">' . htmlspecialchars($_GET['error']) . '</div>';
+                }
+                ?>
         <form action="login_process.php" method="post">
             <div class="username">
                 <input type="text" name="nombre_usuario" required>
