@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Mapa</title>
     <!-- Incluye la biblioteca LeafletJS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
-        /* Estilo para el contenedor del mapa */
-        #map-container {
-            width: 50%; /* El mapa ocupa la mitad de la pantalla */
-            height: 100vh; /* Altura igual al 100% del viewport */
-            position: absolute;
-        }
+      /* Estilo para el contenedor del mapa */
+      #map-container {
+        width: 50%; /* El mapa ocupa la mitad de la pantalla */
+        height: 100vh; /* Altura igual al 100% del viewport */
+        position: absolute;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Contenedor para el mapa -->
     <div id="map-container"></div>
 
     <script>
-        // Crea un mapa centrado en Toluca de Lerdo, México
-        var mymap = L.map('map-container').setView([19.2921, -99.6532], 13);
+      // Crea un mapa centrado en Toluca de Lerdo, México
+      var mymap = L.map("map-container").setView([19.2921, -99.6532], 13);
 
-        // Carga un mapa base de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(mymap);
+      // Carga un mapa base de OpenStreetMap
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+      }).addTo(mymap);
+
+      // Agrega un evento de clic al mapa
+      mymap.on("click", function (e) {
+        // Obtiene las coordenadas (latitud y longitud) del clic
+        var latlng = e.latlng;
+        var latitude = latlng.lat;
+        var longitude = latlng.lng;
+
+        // Crea una ventana emergente con las coordenadas
+        L.popup()
+          .setLatLng(latlng)
+          .setContent(
+            "Latitud: " +
+              latitude.toFixed(6) +
+              "<br>Longitud: " +
+              longitude.toFixed(6)
+          )
+          .openOn(mymap);
+      });
     </script>
-</body>
+  </body>
 </html>
