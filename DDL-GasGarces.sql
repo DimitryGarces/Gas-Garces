@@ -36,7 +36,7 @@ CREATE TABLE DatosPersonales(Id_Datos INT(5) PRIMARY KEY AUTO_INCREMENT,
 		ApellidoP VARCHAR(20) NOT NULL,
 		Usuario VARCHAR(20) NOT NULL,
 		Contrasenia VARCHAR(20) NOT NULL,
-		Telefono VARCHAR(10) NOT NULL,
+		Telefono INT(10) NOT NULL,
 		Edad INT(2) NOT NULL,
 		Curp VARCHAR(18) NOT NULL);
 		
@@ -61,9 +61,10 @@ CREATE TABLE Empleado(Id_Empleado INT(5) PRIMARY KEY AUTO_INCREMENT,
 CREATE TABLE Administrador(Id_Empleado INT(5) PRIMARY KEY AUTO_INCREMENT, FOREIGN KEY (Id_Empleado) REFERENCES Empleado(Id_Empleado)
 			);
 			
-			
+
 CREATE TABLE Pedido(Id_Pedido INT(5) PRIMARY KEY AUTO_INCREMENT,
-			Id_Usuario INT(5), FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario),
+			Id_Usuario INT(5),
+			Id_Direccion INT(5), FOREIGN KEY (Id_Usuario,Id_Direccion) REFERENCES Usuario_Direccion(Id_Usuario,Id_Direccion),
 			Id_Empleado INT(5), FOREIGN KEY (Id_Empleado) REFERENCES Empleado(Id_Empleado),
 			Id_Estatus INT(1), FOREIGN KEY (ID_Estatus) REFERENCES Estatus(Id_Estatus),
 			HorarioInicio TIME NOT NULL,
