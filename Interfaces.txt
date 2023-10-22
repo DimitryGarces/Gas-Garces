@@ -1,0 +1,26 @@
+P = Pendiente
+R = Realizado
+PR = En Progeso(Esta en su mayoria, solo faltan detalles)
+
+Persona responsable del avance, puede tener 1,2 o 3
+D = Diego
+R = Rafael
+J = Jonathan
+
+
+---Interfaces Usuarios---
+R-D Ventana Iniciar Sesión 
+R-J Ventana Registro
+ Ventana Usuario Principal(el var se actualiza cuando inicio sesión el usuario y mostrar más opciones, como la de solicitar pedido)
+ Ventana usuario para actualizar sus datos
+ Ventana usuario de registar una dirección
+ Ventana usuario para realizar un pedido(en esa misma poder visualizar el estado de su pedio? y cuanto falta para el pedido?)
+
+---Interfaces Usuarios---
+ Ventana del empleado, para rastrear un pedido
+ Ventana del empleado que vea los pedidos pendientes(Que sea como una tabla)
+ Ventana principal del empleado(podria ser la de pedidos pendientes, su navbar puede tener botones, para redireccionar y una notificación)
+ Ventana de empleado suspender servicio(por un evento que necesite solucionar y no este disponible, motivo de suspensión y algo)
+
+---Interfaces de administrador---
+ Ventana principal(Que datos debe llevar? (supondria el dar de alta a un empleado, ver ganancias con la tabla de pedidos) ver el status de la pipa. Pero eso en botones en el navbar?) 

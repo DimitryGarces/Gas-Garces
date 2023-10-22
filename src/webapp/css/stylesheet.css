@@ -204,3 +204,41 @@ input[type="submit"]:hover {
     transform: translateY(4px); /* Hundir el botón al presionarlo */
 }
 
+.navbar_inicio {
+    background-color: #da0700ef; /* Color vino */
+    padding: 10px 0; /* Ajuste el espaciado interior según sea necesario */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para un aspecto metálico */
+}
+
+.navbar_inicio nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 15px; /* Ajusta el espacio entre el logo y el lado izquierdo */
+    margin-right: 15px; /* Ajusta el espacio entre el logo y el primer enlace */
+    width: 48px; /* Establece el ancho del logo */
+    height: 30px; /* Establece la altura del logo */
+}
+
+.navbar_inicio a:not(:last-child) {
+    color: #FFF; /* Texto en color blanco */
+    text-decoration: none;
+    margin: 0 15px; /* Ajusta el espacio horizontal entre los elementos del menú */
+    font-size: 18px;
+    transition: color 0.3s ease; /* Transición para el color del texto */
+}
+
+.navbar_inicio a:last-child {
+    color: #FFF; /* Texto en color blanco */
+    text-decoration: none;
+    float: right; /* Alinear a la derecha */
+    margin-right: 25px; /* Establece un margen derecho para el último enlace */
+    font-size: 18px;
+    transition: color 0.3s ease; /* Transición para el color del texto */
+    margin-top: 12px !important; /* Baja la posición en 5px con !important */
+}
+
+  
