@@ -1,12 +1,39 @@
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* Estilos para los enlaces en el pie de página */
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Estilos para resaltar el enlace de correo */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* styles.css */
+
 body {
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  background: linear-gradient(
-    150deg,
-    #2a3f57,
-    #7b9daf
-  ); /* Azul oscuro a verde */
+  background: linear-gradient(150deg, #2a3f57, #7b9daf);
+  /* Azul oscuro a verde */
   height: 100vh;
 }
 
@@ -16,14 +43,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: #f2f2f2; /* Gris claro */
+  background: #f2f2f2e0;
+  /* Gris claro */
   border-radius: 10px;
 }
 
 .formulario h1 {
   text-align: center;
   padding: 0 0 20px 0;
-  border-bottom: 1px solid #c1c1c1; /* Gris más oscuro */
+  border-bottom: 1px solid #c1c1c1d2;
+  /* Gris más oscuro */
 }
 
 .formulario form {
@@ -45,39 +74,43 @@ form .username {
   border: none;
   background: none;
   outline: none;
-  border-bottom: 2px solid #c1c1c1; /* Gris más oscuro */
+  border-bottom: 2px solid #c1c1c1d3;
+  /* Gris más oscuro */
 }
 
 .username label {
   position: absolute;
   top: 50%;
   left: 5px;
-  color: #888; /* Gris más claro */
+  color: #888;
+  /* Gris más claro */
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  transition: 0.5s;
+  transition: .5s;
 }
 
 .username span::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 40px;
   left: 0;
   width: 0%;
   height: 2px;
-  background: #c1c1c1; /* Gris más oscuro */
-  transition: 0.5s;
+  background: #c1c1c1;
+  /* Gris más oscuro */
+  transition: .5s;
 }
 
-.username input:focus ~ label,
-.username input:focus ~ label {
+.username input:focus~label,
+.username input:valid~label {
   top: -5px;
-  color: #c1c1c1; /* Gris más oscuro */
+  color: #c1c1c1;
+  /* Gris más oscuro */
 }
 
-.username input:focus ~ span::before,
-.username input:focus ~ span::before {
+.username input:focus~span::before,
+.username input:valid~span::before {
   width: 100%;
 }
 
@@ -95,7 +128,8 @@ input[type="submit"] {
   width: 100%;
   height: 50px;
   border: 1px solid;
-  background: #dc3545; /* Rojo */
+  background: #dc3545;
+  /* Rojo */
   border-radius: 25px;
   font-size: 18px;
   color: white;
@@ -104,8 +138,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  border-color: #800; /* Púrpura oscuro */
-  transition: 0.5s;
+  border-color: #800;
+  /* Púrpura oscuro */
+  transition: .5s;
 }
 
 .registrarse {
@@ -116,7 +151,8 @@ input[type="submit"]:hover {
 }
 
 .registrarse a {
-  color: #007bff; /* Azul brillante */
+  color: #007bff;
+  /* Azul brillante */
   text-decoration: none;
 }
 
@@ -130,65 +166,77 @@ input[type="submit"]:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: #f2f2f2; /* Gris claro */
+  background: #f2f2f2;
+  /* Gris claro */
   border-radius: 10px;
-  padding: 20px; /* Añadido para más espacio interno */
-  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+  padding: 20px;
+  /* Añadido para más espacio interno */
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte al ancho total */
 }
 
 .sing-up_form h1 {
   text-align: center;
-  margin-bottom: 20px; /* Espaciado inferior para separar el título de los campos */
-  border-bottom: 1px solid #c1c1c1; /* Gris más oscuro */
+  margin-bottom: 20px;
+  /* Espaciado inferior para separar el título de los campos */
+  border-bottom: 1px solid #c1c1c1;
+  /* Gris más oscuro */
 }
 
 .sing-up_form .registration_data {
   position: relative;
-  margin: 20px 0; /* Mayor espacio entre elementos */
+  margin: 20px 0;
+  /* Mayor espacio entre elementos */
 }
 
 .registration_data input {
-  width: calc(
-    100% - 10px
-  ); /* Ajuste para dar un poco más de ancho real al input */
-  padding: 10px 5px; /* Aumento del padding para más altura */
+  width: calc(100% - 10px);
+  /* Ajuste para dar un poco más de ancho real al input */
+  padding: 10px 5px;
+  /* Aumento del padding para más altura */
   font-size: 16px;
   border: none;
   background: none;
   outline: none;
-  border-bottom: 2px solid #c1c1c1; /* Gris más oscuro */
+  border-bottom: 2px solid #c1c1c1;
+  /* Gris más oscuro */
 }
 
 .registration_data label {
   position: absolute;
   top: 50%;
   left: 5px;
-  color: #888; /* Gris más claro */
+  color: #888;
+  /* Gris más claro */
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  transition: 0.5s;
+  transition: .5s;
 }
 
 .registration_data span::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: calc(100% - 2px); /* Posiciona el borde en la parte inferior del input */
+  top: calc(100% - 2px);
+  /* Posiciona el borde en la parte inferior del input */
   left: 0;
   width: 0%;
   height: 2px;
-  background: #c1c1c1; /* Gris más oscuro */
-  transition: 0.5s;
+  background: #c1c1c1;
+  /* Gris más oscuro */
+  transition: .5s;
 }
 
-.registration_data input:focus ~ label,
-.registration_data input:valid ~ label {
-  top: -5px; /* Ajuste de posición cuando se enfoca o se ha ingresado texto */
-  color: #c1c1c1; /* Gris más oscuro */
+.registration_data input:focus~label,
+.registration_data input:valid~label {
+  top: -5px;
+  /* Ajuste de posición cuando se enfoca o se ha ingresado texto */
+  color: #c1c1c1;
+  /* Gris más oscuro */
 }
 
-.registration_data input:focus ~ span::before,
-.registration_data input:valid ~ span::before {
+.registration_data input:focus~span::before,
+.registration_data input:valid~span::before {
   width: 100%;
 }
 
@@ -196,136 +244,181 @@ input[type="submit"]:hover {
   width: 100%;
   height: 50px;
   border: 1px solid;
-  background: #dc3545; /* Rojo */
+  background: #dc3545;
+  /* Rojo */
   border-radius: 25px;
   font-size: 18px;
   color: white;
   cursor: pointer;
   outline: none;
-  margin-top: 20px; /* Añadido para dar espacio entre el botón y los campos de entrada */
-  transition: background 0.3s ease, transform 0.3s ease; /* Agregadas transiciones para el color de fondo y la transformación */
+  margin-top: 20px;
+  /* Añadido para dar espacio entre el botón y los campos de entrada */
+  transition: background 0.3s ease, transform 0.3s ease;
+  /* Agregadas transiciones para el color de fondo y la transformación */
 }
 
 .sing-up_form button:active {
-  transform: translateY(4px); /* Hundir el botón al presionarlo */
+  transform: translateY(4px);
+  /* Hundir el botón al presionarlo */
 }
 
-.navbar_inicio {
-  background-color: #da0700ef; /* Color vino */
-  padding: 10px 0; /* Ajuste el espaciado interior según sea necesario */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para un aspecto metálico */
-}
-
-.navbar_inicio nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logo {
-  margin-left: 15px; /* Ajusta el espacio entre el logo y el lado izquierdo */
-  margin-right: 15px; /* Ajusta el espacio entre el logo y el primer enlace */
-  width: 48px; /* Establece el ancho del logo */
-  height: 30px; /* Establece la altura del logo */
-}
-
-.navbar_inicio a:not(:last-child) {
-  color: #fff; /* Texto en color blanco */
-  text-decoration: none;
-  margin: 0 15px; /* Ajusta el espacio horizontal entre los elementos del menú */
-  font-size: 18px;
-  transition: color 0.3s ease; /* Transición para el color del texto */
-}
-
-.navbar_inicio a:last-child {
-  color: #fff; /* Texto en color blanco */
-  text-decoration: none;
-  float: right; /* Alinear a la derecha */
-  margin-right: 25px; /* Establece un margen derecho para el último enlace */
-  font-size: 18px;
-  transition: color 0.3s ease; /* Transición para el color del texto */
-  margin-top: 12px !important; /* Baja la posición en 5px con !important */
-}
-
-.orden_principal {
-  color: #fff;
-  margin-top: 20px;
+/* Estilo para el contenedor de la sección "Acerca de nosotros" */
+.about-us {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, 70%);
+  width: 400px;
+  background: #f2f2f2e0;
+  /* Gris claro */
+  border-radius: 10px;
+  margin-bottom: 50px;
+  /* Espacio superior para separarlo del formulario */
   font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.ima_emp {
-  width: 320px;
-  height: 195px;
-  margin-top: 100px;
-  margin-left: 30px;
+/* Estilo para el título de la sección "Acerca de nosotros" */
+.about-us h2 {
+  font-size: 24px;
+  /* Tamaño del texto */
+  margin-bottom: 10px;
+  /* Espacio inferior */
+  color: #333;
+  /* Color del texto */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.orden_principal h1 {
-  color: #fff;
-  width: 200%;
-  font-size: 43px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-top: -308px;
-  margin-left: 655px;
+/* Estilo para el párrafo de la descripción */
+.about-us p {
+  font-size: 16px;
+  /* Tamaño del texto */
+  color: #555;
+  /* Color del texto más oscuro */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.principal_parr_1 {
-  font-size: 18px;
-  margin-top: -20px;
-  margin-left: 655px;
-  max-width: 540px;
-  text-align: justify;
+/* Estilo para las imágenes en la sección "Acerca de nosotros" */
+.about-us img {
+  max-width: 100%;
+  /* Ajustar el tamaño máximo de la imagen al contenedor */
+  margin-top: 10px;
+  /* Espacio superior entre imágenes y texto */
 }
 
-.orden_principal h2 {
-  color: #fff;
-  width: 200%;
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-left: 655px;
+/* */
+/* Estilo para el contenedor de la sección "Acerca de nosotros" */
+.zones {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, 160%);
+  width: 400px;
+  background: #f2f2f2e0;
+  /* Gris claro */
+  border-radius: 10px;
+  margin-bottom: 50px;
+  /* Espacio superior para separarlo del formulario */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.principal_parr_2 {
-  font-size: 18px;
-  margin-top: -20px;
-  margin-left: 655px;
-  max-width: 540px;
-  text-align: justify;
+/* Estilo para el título de la sección "Acerca de nosotros" */
+.zones h2 {
+  font-size: 24px;
+  /* Tamaño del texto */
+  margin-bottom: 10px;
+  /* Espacio inferior */
+  color: #333;
+  /* Color del texto */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.orden_principal h3 {
-  color: #fff;
-  width: 200%;
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-left: 655px;
+/* Estilo para el párrafo de la descripción */
+.zones p {
+  font-size: 16px;
+  /* Tamaño del texto */
+  color: #555;
+  /* Color del texto más oscuro */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.principal_parr_3 {
-  font-size: 18px;
-  margin-top: -20px;
-  margin-left: 655px;
-  max-width: 540px;
-  text-align: justify;
+/* Estilo para las imágenes en la sección "Acerca de nosotros" */
+.zones img {
+  max-width: 100%;
+  /* Ajustar el tamaño máximo de la imagen al contenedor */
+  margin-top: 10px;
+  /* Espacio superior entre imágenes y texto */
 }
 
-.orden_principal h4 {
-  color: #fff;
-  width: 200%;
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-top: -100px;
-  margin-left: 30px;
+/* */
+/* Estilo para el contenedor de la sección "Acerca de nosotros" */
+.logo {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 300px;
+  background: #312f2fd2;
+  /* Gris claro */
+  border-radius: 2px;
+  margin-bottom: 5px;
+  /* Espacio superior para separarlo del formulario */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
 }
 
-.principal_parr_4 {
-  font-size: 18px;
-  margin-top: -30px;
-  margin-left: 30px;
-  max-width: 540px;
-  text-align: justify;
+/* Estilo para el título de la sección "Acerca de nosotros" */
+.logo h2 {
+  font-size: 50px;
+  /* Tamaño del texto */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* Espacio inferior */
+  color: #000000;
+  /* Color del texto */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
+}
+
+/* */
+/* Estilo para el contenedor de la sección "Acerca de nosotros" */
+.services {
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  width: 130px;
+  background: #646363d2;
+  /* Gris claro */
+  border-radius: 2px;
+  margin-bottom: 5px;
+  /* Espacio superior para separarlo del formulario */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
+}
+
+/* Estilo para el título de la sección "Acerca de nosotros" */
+.services h2 {
+  font-size: 15px;
+  /* Tamaño del texto */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* Espacio inferior */
+  margin-left: 5px;
+  color: #000000;
+  /* Color del texto */
+  font-family: Arial, sans-serif;
+  /* Cambia la fuente a "Arial" o una fuente sans-serif adecuada */
+}
+
+/* Estilo para las imágenes en la sección "Acerca de nosotros" */
+.services img {
+  max-width: 70%;
+  /* Ajustar el tamaño máximo de la imagen al contenedor */
+  margin-top: 10px;
+  /* Espacio superior entre imágenes y texto */
+  margin-left: 15px;
 }

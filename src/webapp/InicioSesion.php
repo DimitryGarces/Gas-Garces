@@ -6,6 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        body {
+            background-image: url('media/Tank.jpeg');
+            background-size: auto;
+            /* Ajusta la imagen al tamaño del cuerpo */
+            background-repeat: repeat;
+            /* Evita la repetición de la imagen */
+        }
+    </style>
+    <div class="logo">
+        <h2>Gas-Garcés</h2>
+    </div>
 </head>
 
 <body>
@@ -47,6 +59,32 @@
         ?>
 
     </div>
+    <div class="about-us">
+        <h2>Acerca de Nosotros</h2>
+        <p>Somos una empresa líder en la distribución de gas LP en el Estado de México. Nuestra misión es proporcionar un servicio confiable y seguro a nuestros clientes. Contamos con años de experiencia en la industria y un equipo de profesionales comprometidos con la seguridad y la satisfacción del cliente.</p>
+        <img src="media/element.jpg" alt="Nuestra empresa en acción">
+    </div>
+    <div class="zones">
+        <h2>¿Qué localidades abarcamos?</h2>
+        <p>Hasta el momento solo tenemos covertura en 3 municipios del Estado de Mexico.</p>
+        <p>Zinacantepec</p>
+        <p>Toluca</p>
+        <p>Metepec</p>
+        <img src="media/MapaZoom.png" alt="Nuestra empresa en acción">
+    </div>
+    <div class="services">
+        <h2>Servicios para</h2>
+        <p>Cilindros</p>
+        <img src="media/cilindro2.jpeg" alt="Nuestra empresa en acción">
+        <p>Estacionarios</p>
+        <img src="media/cilindro2.jpeg" alt="Nuestra empresa en acción">
+    </div>
 </body>
+<footer>
+    <div class="footer-content">
+        <p>¿Tienes alguna sugerencia?</p>
+        <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
+    </div>
+</footer>
 
 </html>

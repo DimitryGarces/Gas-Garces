@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Mapa</title>
   <!-- Incluye la biblioteca LeafletJS -->
@@ -15,42 +16,13 @@
       <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
     </div>
   </footer>
-  <!-- Contenedor para el mapa -->
-  <div id="map-container"></div>
-
-  <script>
-    // Crea un mapa centrado en Toluca de Lerdo, México
-    var mymap = L.map("map-container").setView([19.2921, -99.6532], 13);
-
-    // Carga un mapa base de OpenStreetMap
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-    }).addTo(mymap);
-
-    // Agrega un evento de clic al mapa
-    mymap.on("click", function (e) {
-      // Obtiene las coordenadas (latitud y longitud) del clic
-      var latlng = e.latlng;
-      var latitude = latlng.lat;
-      var longitude = latlng.lng;
-
-      // Crea una ventana emergente con las coordenadas
-      L.popup()
-        .setLatLng(latlng)
-        .setContent(
-          "Latitud: " +
-          latitude.toFixed(6) +
-          "<br>Longitud: " +
-          longitude.toFixed(6)
-        )
-        .openOn(mymap);
-    });
+  <!-- Script para mostrar las rutas -->
+  <script src="js/rutas.js">
     
   </script>
-  <!-- Contenedor para las rutas -->
-  <div id="ruta-container"></div>
+  <!-- Contenedor para el mapa -->
+  <div id="map-container">
 
-  <!-- Script para mostrar las rutas -->
-  <script src="js/rutas.js"></script>
+  </div>
 </body>
 </html>
