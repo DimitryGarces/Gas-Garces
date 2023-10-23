@@ -669,6 +669,8 @@ VALUES ("Jonathan","Montalvo","Jonathan._.MP","123",7293617331,21,"MOPJ020809HMC
 INSERT INTO DATOSPERSONALES (Nombre,ApellidoP,Usuario,Contrasenia,Telefono,Edad,Curp)
 VALUES ("Diego","Garces","Dimitry","123",724998939,21,"GAMD01126HMCRRGA4");
 
+INSERT INTO DATOSPERSONALES (Nombre,ApellidoP,Usuario,Contrasenia,Telefono,Edad,Curp)
+VALUES ("Arturo","Garces","Tupsi","123",7222335092,38,"GAMD01126HMCRRGA6");
 
 TABLA Usuario
 INSERT INTO USUARIO (Id_Usuario,Id_Datos) VALUES (22,22);
@@ -684,6 +686,10 @@ INSERT INTO EMPLEADO
 (Id_Estatus, Id_Datos, Id_Direccion, Id_Pipa, RFC, HorarioInicio, HorarioFin)
 VALUES(1, 22, 1, 'PRUEBA', 'GAGA920408EL6', '07:00', '17:00');
 
+INSERT INTO EMPLEADO
+(Id_Estatus, Id_Datos, Id_Direccion, Id_Pipa, RFC, HorarioInicio, HorarioFin)
+VALUES(1, 24, 1, 'PRUEBA', 'GAGA920408EL6', '07:00', '17:00');
+
 INSERT INTO Usuario_Direccion (Id_Usuario, Id_Direccion) VALUES(23,2);
 
 TABLA Pedido
@@ -692,3 +698,7 @@ VALUES(23, 2, 2, 3, '15:30', '16:40', '21/10/23', 1500); //Cuenta con error de f
 
 INSERT INTO PEDIDO (Id_Usuario, Id_Direccion, Id_Empleado, Id_Estatus, HorarioInicio, HorarioFin, FechaP, CantidadL)
 VALUES(23, 2, 2, 3, '15:30', '16:40', '23/10/21', 1500);
+
+INSERT INTO PEDIDO (Id_Usuario, Id_Direccion, Id_Empleado, Id_Estatus, HorarioInicio, HorarioFin, FechaP, CantidadL)
+VALUES(23, 2, 2, 3, '15:30', '17:40', '23/10/23', 1500);
+

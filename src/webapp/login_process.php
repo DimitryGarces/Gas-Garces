@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verifica si se encontró un empleado con las credenciales proporcionadas
         if (mysqli_stmt_num_rows($stmt_empleado) == 1) {
             // Credenciales válidas para empleado, redirecciona a la página de inicio de empleado
-            header("Location: mapa.html");
+            header("Location: mapa.php");
             exit();
         }
 

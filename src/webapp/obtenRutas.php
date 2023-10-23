@@ -24,21 +24,19 @@ try {
         )
     );";
     $resultado = $con->query($consulta);
-
     $datos = array();
-
     if ($resultado->num_rows > 0) {
         while ($fila = $resultado->fetch_assoc()) {
             $datos[] = $fila;
         }
     }
+    // Después de obtener tus datos de rutas en $datos
+    $rutas = json_encode($datos);
+
+    echo $rutas;
 } catch (Exception $e) {
     // Manejar la excepción de la base de datos, por ejemplo, registrándola o mostrándola
     die($e->getMessage());
 }
-// Después de obtener tus datos de rutas en $datos
-$rutas = json_encode($datos);
-
-
 // Cierra la conexión a la base de datos
 mysqli_close($con);
