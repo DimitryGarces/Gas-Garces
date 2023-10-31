@@ -12,7 +12,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 /* Estilos para los enlaces en el pie de página */
@@ -87,11 +86,11 @@ form .username {
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .username span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 40px;
   left: 0;
@@ -99,18 +98,18 @@ form .username {
   height: 2px;
   background: #c1c1c1;
   /* Gris más oscuro */
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.username input:focus~label,
-.username input:valid~label {
+.username input:focus ~ label,
+.username input:valid ~ label {
   top: -5px;
   color: #c1c1c1;
   /* Gris más oscuro */
 }
 
-.username input:focus~span::before,
-.username input:valid~span::before {
+.username input:focus ~ span::before,
+.username input:valid ~ span::before {
   width: 100%;
 }
 
@@ -140,7 +139,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   border-color: #800;
   /* Púrpura oscuro */
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .registrarse {
@@ -211,11 +210,11 @@ input[type="submit"]:hover {
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .registration_data span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: calc(100% - 2px);
   /* Posiciona el borde en la parte inferior del input */
@@ -224,19 +223,19 @@ input[type="submit"]:hover {
   height: 2px;
   background: #c1c1c1;
   /* Gris más oscuro */
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.registration_data input:focus~label,
-.registration_data input:valid~label {
+.registration_data input:focus ~ label,
+.registration_data input:valid ~ label {
   top: -5px;
   /* Ajuste de posición cuando se enfoca o se ha ingresado texto */
   color: #c1c1c1;
   /* Gris más oscuro */
 }
 
-.registration_data input:focus~span::before,
-.registration_data input:valid~span::before {
+.registration_data input:focus ~ span::before,
+.registration_data input:valid ~ span::before {
   width: 100%;
 }
 
@@ -421,4 +420,124 @@ input[type="submit"]:hover {
   margin-top: 10px;
   /* Espacio superior entre imágenes y texto */
   margin-left: 15px;
+}
+
+.navbar_inicio {
+  background-color: #da0700ef; /* Color vino */
+  padding: 10px 0; /* Ajuste el espaciado interior según sea necesario */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para un aspecto metálico */
+}
+
+.navbar_inicio nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ima_bar {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 48px; /* Ajusta el ancho deseado */
+  height: 30px; /* Ajusta la altura deseada */
+}
+
+.navbar_inicio a:not(:last-child) {
+  color: #fff; /* Texto en color blanco */
+  text-decoration: none;
+  margin: 0 15px; /* Ajusta el espacio horizontal entre los elementos del menú */
+  font-size: 18px;
+  transition: color 0.3s ease; /* Transición para el color del texto */
+}
+
+.navbar_inicio a:last-child {
+  color: #fff; /* Texto en color blanco */
+  text-decoration: none;
+  float: right; /* Alinear a la derecha */
+  margin-right: 25px; /* Establece un margen derecho para el último enlace */
+  font-size: 18px;
+  transition: color 0.3s ease; /* Transición para el color del texto */
+  margin-top: 12px !important; /* Baja la posición en 5px con !important */
+}
+
+.orden_principal {
+  color: #fff;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ima_emp {
+  width: 320px;
+  height: 195px;
+  margin-top: 100px;
+  margin-left: 30px;
+}
+
+.orden_principal h1 {
+  color: #fff;
+  width: 200%;
+  font-size: 43px;
+  font-weight: bold;
+  font-family: Impact, Charcoal, sans-serif;
+  margin-top: -308px;
+  margin-left: 655px;
+}
+
+.principal_parr_1 {
+  font-size: 18px;
+  margin-top: -20px;
+  margin-left: 655px;
+  max-width: 540px;
+  text-align: justify;
+}
+
+.orden_principal h2 {
+  color: #fff;
+  width: 200%;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Impact, Charcoal, sans-serif;
+  margin-left: 655px;
+}
+
+.principal_parr_2 {
+  font-size: 18px;
+  margin-top: -20px;
+  margin-left: 655px;
+  max-width: 540px;
+  text-align: justify;
+}
+
+.orden_principal h3 {
+  color: #fff;
+  width: 200%;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Impact, Charcoal, sans-serif;
+  margin-left: 655px;
+}
+
+.principal_parr_3 {
+  font-size: 18px;
+  margin-top: -20px;
+  margin-left: 655px;
+  max-width: 540px;
+  text-align: justify;
+}
+
+.orden_principal h4 {
+  color: #fff;
+  width: 200%;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Impact, Charcoal, sans-serif;
+  margin-top: -100px;
+  margin-left: 30px;
+}
+
+.principal_parr_4 {
+  font-size: 18px;
+  margin-top: -30px;
+  margin-left: 30px;
+  max-width: 540px;
+  text-align: justify;
 }
