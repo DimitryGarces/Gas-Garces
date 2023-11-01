@@ -1,3 +1,7 @@
+<?php
+// Cierra la sesión
+session_destroy();
+?>
 <!DOCTYPE html>
 <html>
 

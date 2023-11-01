@@ -1,3 +1,12 @@
+<?php
+session_start(); // Asegúrate de haber iniciado la sesión
+
+// Verifica si el nombre de usuario está almacenado en la sesión
+if (isset($_SESSION['nombre_usuario'])) {
+    $nombre_usuario = $_SESSION['nombre_usuario'];
+    // Ahora puedes mostrar el nombre de usuario en tu página
+    echo "Bienvenido, $nombre_usuario!";
+?>
 <!DOCTYPE html>
 <html>
 <head>

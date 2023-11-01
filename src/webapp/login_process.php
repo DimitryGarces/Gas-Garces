@@ -4,13 +4,13 @@ ini_set('display_errors', 'On');
 
 // Incluye la conexión a la base de datos desde db.php
 include('db.php');
-
+session_start();
 // Verifica si se enviaron los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtén los valores del formulario
     $nombre_usuario = $_POST['nombre_usuario'];
     $contraseña = $_POST['contraseña'];
-
+    $_SESSION['nombre_usuario'] = $nombre_usuario;
     try {
         // Consulta SQL para verificar las credenciales de un usuario normal con sentencia preparada
         $sql_usuario = "SELECT Usuario.Id_Usuario
