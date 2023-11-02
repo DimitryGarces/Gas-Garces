@@ -20,7 +20,7 @@ CREATE TABLE CodigoPost(Id_Codigo INT(5) PRIMARY KEY AUTO_INCREMENT,
 		Id_Municipio INT(5), FOREIGN KEY (ID_Municipio) REFERENCES Municipio(Id_Municipio));
 
 CREATE TABLE Colonia(Id_Colonia INT(5) PRIMARY KEY AUTO_INCREMENT,
-		Nombre VARCHAR(40),
+		Nombre VARCHAR(50),
 		ID_Codigo INT(5), FOREIGN KEY (Id_Codigo) REFERENCES CodigoPost(Id_Codigo));
 		
 CREATE TABLE Direccion(Id_Direccion INT(5) PRIMARY KEY AUTO_INCREMENT,
@@ -29,14 +29,14 @@ CREATE TABLE Direccion(Id_Direccion INT(5) PRIMARY KEY AUTO_INCREMENT,
 		Colonia INT(5), FOREIGN KEY (Colonia) REFERENCES Colonia(Id_Colonia),
 		Referencia VARCHAR(30) NOT NULL,
 		Latitud VARCHAR(30),
-		Altitud VARCHAR(30));
+		Longitud VARCHAR(30));
 		
 CREATE TABLE DatosPersonales(Id_Datos INT(5) PRIMARY KEY AUTO_INCREMENT,
 		Nombre VARCHAR(20) NOT NULL,
 		ApellidoP VARCHAR(20) NOT NULL,
 		Usuario VARCHAR(20) NOT NULL,
 		Contrasenia VARCHAR(20) NOT NULL,
-		Telefono INT(10) NOT NULL,
+		Telefono VARCHAR(10) NOT NULL,
 		Edad INT(2) NOT NULL,
 		Curp VARCHAR(18) NOT NULL);
 		

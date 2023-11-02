@@ -41,3 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // Agrega el control de geolocalización al mapa
   L.control.locate().addTo(mymap);
 });
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    alert("Altitud"+ lng+"Latitud"+lat);
+    // Crea un marcador en la ubicación actual
+    var marker = L.marker([lat, lng]).addTo(mymap);
+
+    // Opcional: Abre una ventana emergente con las coordenadas
+    marker
+      .bindPopup(
+        "Ubicación actual:<br>Latitud: " +
+          lat.toFixed(6) +
+          "<br>Longitud: " +
+          lng.toFixed(6)
+      )
+      .openPopup();
+  });
+} else {
+  alert(
+    "Tu navegador no soporta la geolocalización, actualiza tu navegador."
+  );
+}
