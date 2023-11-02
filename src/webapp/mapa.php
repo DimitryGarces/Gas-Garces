@@ -21,7 +21,7 @@
 
 <body>
   <footer>
-    <div class="footer-content">
+    <div class=" footer-content">
       <p>¿Tienes alguna sugerencia?</p>
       <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
     </div>
@@ -30,11 +30,11 @@
   <script src="js/rutas.js">
 
   </script>
+
+  </script>
   <!-- Contenedor para el mapa -->
   <div id="map-container">
 
-  </div>
-  <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
-</body>
+    </body>
 
 </html>
