@@ -27,7 +27,7 @@ footer a:hover {
 
 /* styles.css */
 #map-container {
-    width: 50%;
+    width: 100%;
     height: calc(100vh - 40px);
     /* Resta el alto del footer (40px) del 100vh */
     position: absolute;

@@ -702,3 +702,5 @@ VALUES(23, 2, 2, 3, '15:30', '16:40', '23/10/21', 1500);
 INSERT INTO PEDIDO (Id_Usuario, Id_Direccion, Id_Empleado, Id_Estatus, HorarioInicio, HorarioFin, FechaP, CantidadL)
 VALUES(23, 2, 2, 3, '15:30', '17:40', '23/10/23', 1500);
 
+INSERT INTO Pedido (Id_Usuario, Id_Direccion, Id_Empleado,
+Id_Estatus, HorarioInicio, HorarioFin, FechaP, CantidadL) VALUES(2, 2, 1, 1, '15:30', '17:40', '02/11/23', 1500);

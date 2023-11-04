@@ -33,6 +33,10 @@
   <!-- Contenedor para el mapa -->
   <div id="map-container">
 
+  <!-- Script para solicitudes de nuevos Pedidos-->
+  <script src="js/websocket.js">
+    
+  </script>  
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
 </body>
