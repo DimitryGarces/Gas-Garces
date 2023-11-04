@@ -1,10 +1,10 @@
-// Código para mostrar rutas en el mapa
 document.addEventListener("DOMContentLoaded", function () {
-  console.log(L.control.locate);
   var southWest = L.latLng(19.145, -99.85); // Esquina suroeste de la zona
   var northEast = L.latLng(19.4, -99.38); // Esquina noreste de la zona
 
   var bounds = L.latLngBounds(southWest, northEast);
+  var vistaAjustada = false; // Variable para controlar si la vista ya ha sido ajustada
+
   // Crea un mapa centrado en Toluca de Lerdo, México
   var mymap = L.map("map-container").setView([19.2921, -99.6532], 10);
 
@@ -13,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     maxZoom: 19,
     minZoom: 12,
   }).addTo(mymap);
+
   // Agrega un evento al mapa para ajustar la vista si se exceden los límites
   mymap.on("moveend", function () {
-    if (!bounds.contains(mymap.getBounds())) {
+    if (!vistaAjustada && !bounds.contains(mymap.getBounds())) {
       mymap.setView([19.2921, -99.6532], 12);
+      vistaAjustada = true; // Marcar que la vista ha sido ajustada
     }
   });
 
@@ -39,19 +41,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
   xhr.send();
+
   // Agrega el control de geolocalización al mapa
   L.control.locate().addTo(mymap);
+
   // Obtén una referencia al botón por su ID
   var obtenerUbicacionButton = document.getElementById("obtener-ubicacion");
   var ubicacionEstablecida = false;
+
   // Agrega un evento clic al botón
   obtenerUbicacionButton.addEventListener("click", function () {
-
     if (ubicacionEstablecida) {
       return; // Evita que se establezca la ubicación nuevamente
     }
     ubicacionEstablecida = true;
     window.alert("hola");
+
     // Intenta obtener la ubicación del dispositivo
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {

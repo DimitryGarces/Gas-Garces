@@ -50,3 +50,5 @@ if (isset($_SESSION['nombre_usuario'])) {
     </script>
 </body>
 </html>
+<?
+    }

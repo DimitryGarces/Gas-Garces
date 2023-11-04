@@ -7,14 +7,30 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8""></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
   <style>
     /* Estilo CSS para el botón */
     .ubicacion-button {
-      position: absolute; /* Posición absoluta */
-      top: 10px; /* Ajusta la posición desde la parte superior */
-      right: 10px; /* Ajusta la posición desde la derecha */
-      z-index: 1000; /* Capa z para estar encima del mapa */
+      position: absolute;
+      /* Posición absoluta */
+      top: 10px;
+      /* Ajusta la posición desde la parte superior */
+      right: 10px;
+      /* Ajusta la posición desde la derecha */
+      z-index: 1000;
+      /* Capa z para estar encima del mapa */
+    }
+
+    /* Estilo CSS para el botón */
+    .web-socket {
+      position: absolute;
+      /* Posición absoluta */
+      top: 60px;
+      /* Ajusta la posición desde la parte superior */
+      right: 10px;
+      /* Ajusta la posición desde la derecha */
+      z-index: 1000;
+      /* Capa z para estar encima del mapa */
     }
   </style>
 </head>
@@ -30,15 +46,17 @@
   <script src="js/rutas.js">
 
   </script>
+  <!-- Script para solicitudes de nuevos Pedidos-->
+  <script src="js/websocket.js">
+
+  </script>
   <!-- Contenedor para el mapa -->
   <div id="map-container">
 
-  <!-- Script para solicitudes de nuevos Pedidos-->
-  <script src="js/websocket.js">
-    
-  </script>  
+
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
+  <button class="web-socket" id="web-socket">Establecer conexion web Socket</button>
 </body>
 
 </html>
