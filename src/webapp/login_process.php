@@ -39,6 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_result($stmt_usuario, $id_usuario);
             mysqli_stmt_fetch($stmt_usuario);
 
+            // Almacena las iniciales en la variable de sesión
+            $_SESSION['id_usuario'] = $id_usuario;
+
             // Si encontró un usuario normal, realiza la consulta para obtener las iniciales
             $iniciales = "";
 

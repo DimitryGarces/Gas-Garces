@@ -593,16 +593,31 @@ input[type="submit"]:hover {
   transition: 0.5s;
 }
 
-.user_data span::before {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #c1c1c1;
-  /* Gris más oscuro */
-  transition: 0.5s;
+.user_data select {
+  flex: 1;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none; /* Fondo gris similar a los campos de entrada */
+  color: #888; /* Texto gris similar a los campos de entrada */
+  padding: 5px 10px; /* Espaciado interno */
+  outline: none;
+}
+
+.user_data select option {
+  flex: 1;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: #f2f2f2; /* Fondo gris similar a los campos de entrada */
+  color: #888; /* Texto gris similar a los campos de entrada */
+  padding: 5px 10px; /* Espaciado interno */
+  outline: none;
+}
+
+.user_data select option:checked {
+  background: #f2f2f2; /* Estilo de selección similar a los campos de entrada */
+  color: #888; /* Texto negro o el color que desees */
 }
 
 .user_data input:focus ~ label,
@@ -615,6 +630,23 @@ input[type="submit"]:hover {
 .user_data input:focus ~ span::before,
 .user_data input:valid ~ span::before {
   width: 100%;
+}
+
+.user_data select::before,
+.user_data select:focus,
+.user_data select option:checked,
+.user_data select::after {
+  border-bottom: 2px solid #c1c1c1; /* Estilo de enfoque similar a los campos de entrada */
+}
+
+.user_data select::before,
+.user_data select:focus,
+.user_data select option:checked,
+.user_data select::after {
+  font-size: 16px;
+  background: #c1c1c1d3; /* Fondo blanco o el color que desees */
+  color: #c1c1c1; /* Texto negro o el color que desees */
+  padding: 5px 10px; /* Espaciado interno */
 }
 
 .use_add_form button {

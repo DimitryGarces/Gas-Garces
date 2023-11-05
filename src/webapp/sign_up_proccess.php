@@ -80,13 +80,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecuta la consulta de inserción
         mysqli_stmt_execute($stmt_insertar_datos);
 
+        // Obtiene el ID generado para el usuario
+        $id_user = mysqli_insert_id($con);
+
+        // Ahora puedes usar $usuario_id para insertar en la tabla Usuario
+        if (isset($id_user)) {
+            // Consulta SQL para insertar datos en la tabla Usuario
+            $sql_insertar_usuario = "INSERT INTO Usuario (Id_Datos) VALUES (?)";
+
+            // Prepara la consulta para la inserción
+            $stmt_insertar_usuario = mysqli_prepare($con, $sql_insertar_usuario);
+
+            // Vincula los parámetros
+            mysqli_stmt_bind_param($stmt_insertar_usuario, "i", $id_user);
+
+            // Ejecuta la consulta de inserción
+            mysqli_stmt_execute($stmt_insertar_usuario);
+        }
+
         // Cierra las consultas preparadas
         mysqli_stmt_close($stmt_busqueda_usuario);
         mysqli_stmt_close($stmt_busqueda_curp);
         mysqli_stmt_close($stmt_insertar_datos);
+        mysqli_stmt_close($stmt_insertar_usuario);
 
         // Establece la variable de sesión con el mensaje de éxito
-        $_SESSION['success_message'] = "Registro exitoso";
+        $_SESSION['success_message_r'] = "Registro exitoso";
 
         // Redirige a la ventana de registro
         header("Location: InicioSesion.php");
