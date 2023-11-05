@@ -177,7 +177,7 @@ input[type="submit"]:hover {
 .sing-up_form h1 {
   text-align: center;
   margin-bottom: 20px;
-  /* Espaciado inferior para separar el título de los campos */
+  /* Espaciado inferior para separar el título de los campos*/
   border-bottom: 1px solid #c1c1c1;
   /* Gris más oscuro */
 }
