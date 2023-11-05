@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (mapContainer) {
           // Cambia el valor de la propiedad CSS 'width'
-          mapContainer.style.width = "20%";
+          mapContainer.style.width = "50%";
         }
       }
     };

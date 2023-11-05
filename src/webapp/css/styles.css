@@ -1,98 +1,107 @@
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-content {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Estilos para los enlaces en el pie de página */
 footer a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Estilos para resaltar el enlace de correo */
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* styles.css */
 #map-container {
-    width: 100%;
-    height: calc(100vh - 40px);
-    /* Resta el alto del footer (40px) del 100vh */
-    position: absolute;
-    bottom: 140px;
-    /* Asegura que el mapa comience desde el borde inferior del footer */
+  width: 100%;
+  height: calc(100vh - 40px);
+  /* Resta el alto del footer (40px) del 100vh */
+  position: absolute;
+  bottom: 140px;
+  /* Asegura que el mapa comience desde el borde inferior del footer */
 }
 
+/* styles.css */
+#map-container-d {
+  width: 50%;
+  height: calc(100vh - 40px);
+  /* Resta el alto del footer (40px) del 100vh */
+  position: absolute;
+  bottom: 140px;
+  /* Asegura que el mapa comience desde el borde inferior del footer */
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
 header {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 nav li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
 }
 
 .user-menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user-profile img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .user-profile span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .user-menu ul {
-    list-style: none;
-    margin-left: 10px;
+  list-style: none;
+  margin-left: 10px;
 }
 
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
 }
 
 /* Agrega estilos adicionales para los cuadros de videos y otros elementos según tus necesidades. */

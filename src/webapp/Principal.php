@@ -23,17 +23,16 @@ if (isset($_SESSION['nombre_usuario'])) {
 <body>
   <header class="hea_inicio">
     <nav class="navbar_inicio">
-      <img src="assets/logo.png" alt="Logo de la empresa" class="ima_bar" />
-      <a href="#">INICIO</a>
-      <a href="#">NOSOTROS</a>
-      <a href="#">PROPIEDADES</a>
-      <a href="#">CONTACTO</a>
+      <img src="assets/LogoP.png" alt="Logo de la empresa" class="ima_bar" />
+      <a href="Nosotros.html">INICIO</a>
+      <a href="Principal.php">NOSOTROS</a>
+      <a href="#">HACER PEDIDO</a>
       <a href="InicioSesion.php">INICIAR SESIÓN</a>
     </nav>
   </header>
   <main>
     <div class="orden_principal">
-      <img src="assets/logo.png" alt="imagen de la empresa" class="ima_emp" />
+      <img src="assets/LogoP.png" alt="imagen de la empresa" class="ima_emp" />
       <h1>Gas-Garces</h1>
       <p class="principal_parr_1">
         Gas-Garces es una plataforma en línea dedicada a la facilitación de

@@ -189,7 +189,7 @@
   <!-- Script para mostrar las rutas -->
   <script src="js/direccion.js"></script>
   <!-- Contenedor para el mapa -->
-  <div id="map-container"></div>
+  <div id="map-container-d"></div>
 </body>
 
 </html>

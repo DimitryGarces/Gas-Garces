@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var bounds = L.latLngBounds(southWest, northEast);
   // Crea un mapa centrado en Toluca de Lerdo, México
-  var mymap = L.map("map-container").setView([19.2921, -99.6532], 10);
+  var mymap = L.map("map-container-d").setView([19.2921, -99.6532], 10);
 
   //Validar que sea seleccionada una dirección
 
