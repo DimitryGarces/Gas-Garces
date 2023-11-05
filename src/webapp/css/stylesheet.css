@@ -553,6 +553,7 @@ input[type="submit"]:hover {
   text-align: justify;
 }
 
+<<<<<<< HEAD
 .ima_fondo{
   border-radius: 25%;
   width: 70%;
@@ -598,3 +599,133 @@ input[type="submit"]:hover {
   max-width: 540px;
   text-align: justify;
 }
+=======
+.use_add_form {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-40%, -60%);
+  width: 650px;
+  background: #f2f2f2;
+  /* Gris claro */
+  border-radius: 10px;
+  padding: 20px;
+  /* Añadido para más espacio interno */
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte al ancho total */
+}
+
+.use_add_form .use_add_form {
+  position: relative;
+  margin: 20px 0;
+  /* Mayor espacio entre elementos */
+}
+
+.use_add_form .user_data {
+  position: relative;
+  margin: 20px 0;
+  /* Mayor espacio entre elementos */
+}
+
+.user_data input {
+  width: calc(100% - 10px);
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid #c1c1c1d3;
+  /* Gris más oscuro */
+}
+
+.user_data label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #888;
+  /* Gris más claro */
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user_data select {
+  flex: 1;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none; /* Fondo gris similar a los campos de entrada */
+  color: #888; /* Texto gris similar a los campos de entrada */
+  padding: 5px 10px; /* Espaciado interno */
+  outline: none;
+}
+
+.user_data select option {
+  flex: 1;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: #f2f2f2; /* Fondo gris similar a los campos de entrada */
+  color: #888; /* Texto gris similar a los campos de entrada */
+  padding: 5px 10px; /* Espaciado interno */
+  outline: none;
+}
+
+.user_data select option:checked {
+  background: #f2f2f2; /* Estilo de selección similar a los campos de entrada */
+  color: #888; /* Texto negro o el color que desees */
+}
+
+.user_data input:focus ~ label,
+.user_data input:valid ~ label {
+  top: -5px;
+  color: #c1c1c1;
+  /* Gris más oscuro */
+}
+
+.user_data input:focus ~ span::before,
+.user_data input:valid ~ span::before {
+  width: 100%;
+}
+
+.user_data select::before,
+.user_data select:focus,
+.user_data select option:checked,
+.user_data select::after {
+  border-bottom: 2px solid #c1c1c1; /* Estilo de enfoque similar a los campos de entrada */
+}
+
+.user_data select::before,
+.user_data select:focus,
+.user_data select option:checked,
+.user_data select::after {
+  font-size: 16px;
+  background: #c1c1c1d3; /* Fondo blanco o el color que desees */
+  color: #c1c1c1; /* Texto negro o el color que desees */
+  padding: 5px 10px; /* Espaciado interno */
+}
+
+.use_add_form button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #dc3545;
+  /* Rojo */
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+  /* Añadido para dar espacio entre el botón y los campos de entrada */
+  transition: background 0.3s ease, transform 0.3s ease;
+  /* Agregadas transiciones para el color de fondo y la transformación */
+}
+
+.use_add_form button:active {
+  transform: translateY(4px);
+  /* Hundir el botón al presionarlo */
+}
+>>>>>>> JonathanMP
