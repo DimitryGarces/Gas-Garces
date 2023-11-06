@@ -7,29 +7,26 @@ include('db.php');
 
 // Inicia la sesión
 session_start();
-$registrosAnteriores = 0;
+
+$registrosAnteriores = isset($_GET['registro']) ? (int)$_GET['registro'] : 0; // Obtenemos el valor de 'registro' o establecemos 0 por defecto
 $bool = false;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Matrices para almacenar los datos de las tablas
-    $nvosPedidos = 0;
+    $nuevosRegistros = 0;
 
     try {
-        // Obtener datos de la tabla Municipio
+        // Obtener datos de la tabla Pedido
         $sql_pedido = "SELECT COUNT(*) AS count FROM Pedido";
         $result_pedido = mysqli_query($con, $sql_pedido);
+        
         if ($result_pedido) {
             $row = mysqli_fetch_assoc($result_pedido);
             $nuevosRegistros = $row['count'];
-            if($registrosAnteriores < $nuevosRegistros){
-                $bool=true;
-                $registrosAnteriores=$nuevosRegistros;
-                echo "Se encontraron $registrosAnterioresnuevos registros";
+            if ($registrosAnteriores < $nuevosRegistros) {
+                $bool = true;
+                $registrosAnteriores = $nuevosRegistros;
             }
-            echo json_encode($response);
         } else {
             // Maneja el caso en que la consulta falla
             echo "Error en la consulta SQL: " . mysqli_error($con);
@@ -38,8 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // Manejar la excepción de la base de datos, por ejemplo, registrándola o mostrándola
         die($e->getMessage());
     }
+
     // Cierra la conexión a la base de datos
     mysqli_close($con);
+
+    // Configurar las cabeceras HTTP para indicar que se está enviando JSON
+    header('Content-Type: application/json');
 
     // Convertir las matrices PHP en formato JSON
     $data = [
@@ -47,12 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         'bool' => $bool
     ];
 
-    // Configurar las cabeceras HTTP para indicar que se está enviando JSON
-    header('Content-Type: application/json');
-
     // Enviar el JSON como respuesta al cliente web
     echo json_encode($data);
 }
-
-
 ?>

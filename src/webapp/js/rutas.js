@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return; // Evita que se establezca la ubicación nuevamente
     }
     ubicacionEstablecida = true;
-    window.alert("hola");
 
     // Intenta obtener la ubicación del dispositivo
     if (navigator.geolocation) {
@@ -82,5 +81,25 @@ document.addEventListener("DOMContentLoaded", function () {
         "Tu navegador no soporta la geolocalización, actualiza tu navegador."
       );
     }
+  });
+  // Agrega eventos a los botones Aceptar y Rechazar
+  document.getElementById("btn-aceptar").addEventListener("click", function () {
+    alert('Pedido Aceptado!'); // Ejemplo: Mostrar una alerta
+    mymap.setView([19.2921, -99.6532], 12); // Restaurar la vista original
+    const mapContainer = document.getElementById("map-container");
+    if (mapContainer) {
+      mapContainer.style.width = "100%";
+    }
+    document.getElementById("contenedor-info").style.display = "none";
+  });
+
+  document.getElementById("btn-rechazar").addEventListener("click", function () {
+    alert('Pedido Rechazado'); // Ejemplo: Mostrar una alerta
+    mymap.setView([19.2921, -99.6532], 12); // Restaurar la vista original
+    const mapContainer = document.getElementById("map-container");
+    if (mapContainer) {
+      mapContainer.style.width = "100%";
+    }
+    document.getElementById("contenedor-info").style.display = "none";
   });
 });
