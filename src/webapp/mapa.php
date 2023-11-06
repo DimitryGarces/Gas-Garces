@@ -45,8 +45,11 @@
   </footer>
   <!-- Script para mostrar las rutas -->
   <script src="js/rutas.js">
-
   </script>
+
+  <script src="js/app.js">
+  </script>
+
   <!-- Contenedor para el mapa -->
   <div id="map-container">
 
