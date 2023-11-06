@@ -46,13 +46,14 @@
   <script src="js/rutas.js">
 
   </script>
-  <!-- Script para solicitudes de nuevos Pedidos-->
-  <script src="js/websocket.js">
+  
+  <script src="js/app.js">
+
+  </script>
 
   </script>
   <!-- Contenedor para el mapa -->
   <div id="map-container">
-
 
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
