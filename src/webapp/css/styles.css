@@ -31,7 +31,7 @@ footer a:hover {
   height: calc(100vh - 40px);
   /* Resta el alto del footer (40px) del 100vh */
   position: absolute;
-  bottom: 140px;
+  bottom: 160px;
   /* Asegura que el mapa comience desde el borde inferior del footer */
 }
 
@@ -105,3 +105,8 @@ nav a {
 }
 
 /* Agrega estilos adicionales para los cuadros de videos y otros elementos según tus necesidades. */
+#contenedor-info {
+  width: 300px; /* Ancho deseado */
+  margin-right: 20px; /* Margen derecho para separar del borde de la ventana */
+  float: right; /* Permite que el contenedor esté a la derecha */
+}
