@@ -1,0 +1,83 @@
+<!--
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+  </head>
+
+  <body>
+    <header class="hea_inicio">
+      <nav class="navbar_inicio">
+        <img src="assets/logo.png" alt="Logo de la empresa" class="ima_bar" />
+        <a href="#">INICIO</a>
+        <a href="#">NOSOTROS</a>
+        <a href="#" id="openModal">PEDIDO</a>
+        <a href="InicioSesion.php">INICIAR SESIÓN</a>
+      </nav>
+    </header>
+    <main>
+      <!-- Modal para mostrar la dirección y realizar un pedido -->
+<!--
+      <div id="myModal" class="modal" style="display: none;">
+        <h2>Dirección</h2>
+        <div id="direccionInfo"></div>
+        <label for="cantidad">Cantidad</label>
+        <input type="text" id="cantidad" />
+        <button id="confirmarPedido">Hacer Pedido</button>
+      </div>
+    </main>
+ <!--
+    <footer>
+      <!-- Aquí puedes agregar el contenido del pie de página, como enlaces a redes sociales y contacto. -->
+<!--
+    </footer>
+ <!--
+    <!-- Agrega jQuery y el código JavaScript para realizar el pedido -->
+<!--
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var direccion = [];
+
+        // Agrega un manejador de eventos al enlace "PEDIDO"
+        $("#openModal").click(function () {
+          // Realiza la llamada AJAX para obtener la dirección
+          $.ajax({
+            url: "pedido.php",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+              direccion = data; // Selecciona el primer elemento del array
+              console.log(direccion);
+              // Abre el modal cuando se obtienen los datos
+              var direccionCompleta = `Nombre: ${direccion.direccion[0].Nombre}<br>Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
+              $("#direccionInfo").html(direccionCompleta);
+
+              $("#myModal").show();
+            },
+            error: function (xhr, status, error) {
+              console.log("Error al cargar los datos: " + error);
+            },
+          });
+        });
+
+        // Confirmar el pedido
+        $("#confirmarPedido").click(function () {
+          var cantidad = $("#cantidad").val();
+          if (cantidad !== "") {
+            // Realizar el pedido aquí (puedes enviar la cantidad al servidor si es necesario)
+            alert("Pedido realizado");
+            // Cerrar el modal
+            $("#myModal").hide();
+          } else {
+            alert("Por favor, ingresa la cantidad.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+-->

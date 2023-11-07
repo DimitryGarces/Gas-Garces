@@ -717,3 +717,16 @@ input[type="submit"]:hover {
   max-width: 540px;
   text-align: justify;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #000;
+}
