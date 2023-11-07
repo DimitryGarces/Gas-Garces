@@ -6,6 +6,7 @@
   <!-- Incluye la biblioteca LeafletJS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="icon" type="imagen/png" href="assets/icon.png" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8""></script>
   <style>
@@ -35,6 +36,7 @@
 
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
+  <div include-html="partes/footer.html"></div>
 </body>
 
 </html>

@@ -9,6 +9,7 @@ session_destroy();
     <meta charset="UTF-S">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <title>Iniciar Sesión</title>
+    <link rel="icon" type="imagen/png" href="assets/icon.png" />
     <link rel="stylesheet" href="css/stylesheet.css">
     <style>
         body {

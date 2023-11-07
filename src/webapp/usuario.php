@@ -48,5 +48,6 @@ if (isset($_SESSION['nombre_usuario'])) {
             window.location.href = "realizar_pedido.php"; // Reemplaza "realizar_pedido.php" por la URL de tu página de pedido
         }
     </script>
+    <div include-html="partes/footer.html"></div>
 </body>
 </html>

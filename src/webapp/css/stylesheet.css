@@ -1,3 +1,5 @@
+
+
 footer {
   background-color: #333;
   color: #050505;
@@ -373,7 +375,7 @@ input[type="submit"]:hover {
 
 /* Estilo para el título de la sección "Acerca de nosotros" */
 .logo h2 {
-  font-size: 50px;
+  font-size: 60px;
   /* Tamaño del texto */
   margin-top: 5px;
   margin-bottom: 5px;
@@ -471,14 +473,6 @@ input[type="submit"]:hover {
   font-family: Arial, sans-serif;
 }
 
-.ima_emp {
-  border-radius: 50%;
-  width: 30%;
-  height: 30%;
-  margin-top: 1%;
-  margin-left: 5%;
-}
-
 .orden_principal h1 {
   color: #fcfbfb;
   width: 200%;
@@ -487,15 +481,6 @@ input[type="submit"]:hover {
   font-family: Impact, Charcoal, sans-serif;
   margin-top: -30%;
   margin-left: 50%;
-}
-
-.principal_parr_1 {
-  color: #fcfbfb;
-  font-size: 18px;
-  margin-top: -20px;
-  margin-left: 50%;
-  max-width: 540px;
-  text-align: justify;
 }
 
 .orden_principal h2 {
@@ -516,50 +501,15 @@ input[type="submit"]:hover {
   text-align: justify;
 }
 
-.orden_principal h3 {
-  color: #fcfbfb;
-  width: 200%;
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-left: 50%;
-}
-
 .principal_parr_3 {
-  color: #fcfbfb;
-  font-size: 18px;
+  color: #060606;
+  font-size: 22px;
   margin-top: -20px;
   margin-left: 50%;
   max-width: 540px;
   text-align: justify;
 }
 
-.orden_principal h4 {
-  color: #fcfbfb;
-  width: 200%;
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, Charcoal, sans-serif;
-  margin-top: -2%;
-  margin-left: 5%;
-}
-
-.principal_parr_4 {
-  color: #fcfbfb;
-  font-size: 18px;
-  margin-top: -30px;
-  margin-left: 5%;
-  max-width: 540px;
-  text-align: justify;
-}
-
-.ima_fondo{
-  border-radius: 25%;
-  width: 70%;
-  height: 80%;
-  margin-top: -33%;
-  margin-left: 40%;
-}
 
 .orden_principal h10 {
   color: #0a0a0a;
@@ -569,32 +519,4 @@ input[type="submit"]:hover {
   font-family: Impact, Charcoal, sans-serif;
   margin-top: auto;
   margin-right: 10%;
-}
-
-.nosotros_parr_1 {
-  color: #0a0a0a;
-  font-size: 26px;
-  margin-top: 20px;
-  margin-right: 10%;
-  max-width: 540px;
-  text-align: justify;
-}
-
-.nosotros_parr_2 {
-  color: #0a0a0a;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-right: 10%;
-  max-width: 540px;
-  text-align: justify;
-}
-
-.nosotros_parr_3 {
-  color: #0a0a0a;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-right: 10%;
-  max-width: 540px;
-  text-align: justify;
 }
