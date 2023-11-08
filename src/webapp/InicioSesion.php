@@ -1,6 +1,14 @@
 <?php
+// Desactiva la generación de advertencias y errores
+error_reporting(0);
 // Cierra la sesión
 session_destroy();
+// Habilita la generación de todas las advertencias y errores
+error_reporting(E_ALL);
+/**
+ * unset($_SESSION['nombre_usuario']); // Limpia la variable de sesión 
+ */
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,20 +61,22 @@ session_destroy();
         session_start();
 
         // Muestra el mensaje de éxito si existe de un registro previo
-        if (isset($_SESSION['success_message'])) {
+        if (isset($_SESSION['success_message_r'])) {
             echo "<script>
             setTimeout(function(){
-                alert('" . htmlspecialchars($_SESSION['success_message']) . "');
+                alert('" . htmlspecialchars($_SESSION['success_message_r']) . "');
             }, 500);
           </script>";
-            unset($_SESSION['success_message']); // Limpia la variable de sesión después de mostrarla
+            unset($_SESSION['success_message_r']); // Limpia la variable de sesión después de mostrarla
         }
         ?>
 
     </div>
     <div class="about-us">
         <h2>Acerca de Nosotros</h2>
-        <p>Somos una empresa líder en la distribución de gas LP en el Estado de México. Nuestra misión es proporcionar un servicio confiable y seguro a nuestros clientes. Contamos con años de experiencia en la industria y un equipo de profesionales comprometidos con la seguridad y la satisfacción del cliente.</p>
+        <p>Somos una empresa líder en la distribución de gas LP en el Estado de México. Nuestra misión es proporcionar
+            un servicio confiable y seguro a nuestros clientes. Contamos con años de experiencia en la industria y un
+            equipo de profesionales comprometidos con la seguridad y la satisfacción del cliente.</p>
         <img src="media/element.jpg" alt="Nuestra empresa en acción">
     </div>
     <div class="zones">

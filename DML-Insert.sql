@@ -32,3 +32,16 @@ WHERE MONTH(FechaP) = MONTH(NOW()) AND DAY(FechaP) = DAY(NOW());
 
 
 SELECT Direccion.Latitud, Direccion.Longitud FROM Direccion INNER JOIN Usuario_Direccion 
+
+SELECT
+    d.Id_Direccion,
+    d.Nombre AS Nombre_Direccion,
+    d.Calle,
+    CONCAT(c.Nombre, ' ', cp.Codigo, ' ', m.Nombre) AS Colonia_CodigoPost_Municipio,
+    d.Referencia,
+    d.Latitud,
+    d.Longitud
+FROM Direccion d
+INNER JOIN Colonia c ON d.Colonia = c.Id_Colonia
+INNER JOIN CodigoPost cp ON c.ID_Codigo = cp.Id_Codigo
+INNER JOIN Municipio m ON cp.Id_Municipio = m.Id_Municipio;
