@@ -13,4 +13,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Devuelve el valor de $active_user en formato JSON
     echo json_encode($active_user);
 }
+
 ?>
