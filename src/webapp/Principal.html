@@ -6,18 +6,41 @@
     <title>Inicio</title>
     <link rel="icon" type="imagen/png" href="assets/icon.png" />
     <link rel="stylesheet" href="css/style_principal.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    
     <div class="container">
       <div class="row">
         <h1>Gas-Garces</h1>
-        <div class="col-xs-11 col-s-11 col-m-11 col-l-11 " style="background-color: red;"">
+        <div class="col-xs-10 col-s-10 col-m-10 col-l-10 " style="background-color: red;"">
           <div include-html="partes/menu.html"></div>
         </div>
+        <script>
+          $(document).ready(function () {
+                $.ajax({
+                    url: "validate_session.php",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (active_user) {
+                        if (active_user) {
+                            console.log("xd");
+                            // Cargar el menú para active_user verdadero
+                            $(".status_session").load("partes/menu3.html");
+                        } else {
+                            console.log("no");
+                            // Cargar el menú para active_user falso
+                            $(".status_session").load("partes/menu2.html");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    },
+                });
+            });
 
-        <div class="col-xs-1 col-s-1 col-m-1 col-l-1 " style="background-color: red;"">
-          <div include-html="partes/menu2.html"></div>
+        </script>
+        <div class="col-xs-2 col-s-2 col-m-2 col-l-2 " style="background-color: red;"">
+          <div class="status_session" include-html=""></div>
         </div>
 
         <div class="col-m-12 col-l-8">

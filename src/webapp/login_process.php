@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($stmt_iniciales);
 
             // Credenciales válidas para usuario normal, redirecciona a la página de inicio de usuario normal
-            header("Location: Principal.php");
+            header("Location: Principal.html");
             exit();
         }
 
