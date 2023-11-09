@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var southWest = L.latLng(19.145, -99.85); // Esquina suroeste de la zona
   var northEast = L.latLng(19.4, -99.38); // Esquina noreste de la zona
-
+  var puntoInicial;
   var bounds = L.latLngBounds(southWest, northEast);
   var vistaAjustada = false; // Variable para controlar si la vista ya ha sido ajustada
 
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Obtén una referencia al botón por su ID
   var obtenerUbicacionButton = document.getElementById("obtener-ubicacion");
+  var obtenerRutaButton = document.getElementById("ruta-ubicacion");
   var ubicacionEstablecida = false;
 
   // Agrega un evento clic al botón
@@ -55,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return; // Evita que se establezca la ubicación nuevamente
     }
     ubicacionEstablecida = true;
-
     // Intenta obtener la ubicación del dispositivo
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
+        puntoInicial = L.latLng(lat, lng)
         window.alert("Altitud: " + lng + " Latitud: " + lat);
 
         // Crea un marcador en la ubicación actual
@@ -81,6 +82,38 @@ document.addEventListener("DOMContentLoaded", function () {
         "Tu navegador no soporta la geolocalización, actualiza tu navegador."
       );
     }
+  });
+  // Agrega un evento clic al botón
+  obtenerRutaButton.addEventListener("click", function () {
+    // Define las coordenadas de los puntos inicial y final de la ruta
+
+    var puntoFinal = L.latLng(19.2921, -99.6532);
+    // Crea una capa de ruta
+    const rutaControl = L.Routing.control({
+      waypoints: [
+        puntoInicial,
+        puntoFinal
+      ],
+      routeWhileDragging: true
+    }).addTo(mymap);
+
+
+    // Escucha el evento 'routesfound' para acceder a la ruta trazada
+    rutaControl.on('routesfound', function (e) {
+      var ruta = e.routes[0]; // Obtiene la primera ruta encontrada
+      rutaControl.setWaypoints(ruta.coordinates); // Muestra la ruta en el mapa
+    });
+
+    // Personaliza el ícono de los puntos de control en la capa de ruta
+    rutaControl.getWaypoints().forEach(function (waypoint) {
+      waypoint.setIcon(L.icon({
+        iconUrl: 'punto.png', // Ruta al archivo de imagen del ícono
+        iconSize: [25, 41], // Tamaño del ícono
+        iconAnchor: [12, 41], // Punto de anclaje del ícono
+        popupAnchor: [1, -34], // Punto de anclaje de la ventana emergente del ícono
+      }));
+    });
+    window.alert('Espera mientras trazamos tu ruta!');
   });
   // Agrega eventos a los botones Aceptar y Rechazar
   document.getElementById("btn-aceptar").addEventListener("click", function () {
