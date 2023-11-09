@@ -11,5 +11,6 @@ session_destroy();
 // Habilita la generación de todas las advertencias y errores
 error_reporting(E_ALL);
 header("Location: Principal.html");
+
 exit();
 ?>
