@@ -4,41 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Pedidos</title>
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="icon" type="imagen/png" href="assets/icon.png" />
+    <link rel="stylesheet" href="css/style_principal.css" />
   </head>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        <h1>Gas-Garces</h1>
+        <div class="col-xs-11 col-s-11 col-m-11 col-l-11 " style="background-color: red;"">
+          <div include-html="partes/menuN.html"></div>
+        </div>
 
-  <body_nosotros>
-    <header class="hea_inicio">
-      <nav class="navbar_inicio">
-        <img src="assets/LogoP.png" alt="Logo de la empresa" class="ima_bar" />
-        <a href="#">INICIO</a>
-        <a href="InicioSesion.php">INICIAR SESIÓN</a>
-      </nav>
-    </header>
-    <main>
-      <div class="orden_principal">
-        <h10>Bienvenido a Gas-Garces</h10>
-        <h10>_______________________________________________________________________________________________________________________________________________</h10>
-        <p class="nosotros_parr_1">
-          Gas LP a domiciolo rapido,seguro y con calidad exacta.
-        </p>
-        <p class="nosotros_parr_2">
-          Pide tu cilindro o tanque de gas estacionario en casa, comercio o industria.
-        </p>
-        <p class="nosotros_parr_3">
-          Telefono de contacto: 7221534698.
-        </p>
-        <p class="nosotros_parr_3">
-          Correo: Gas_Garces@hotmail.com
-        </p>
-        <p class="nosotros_parr_3">
-          Sucursal: Alguna lugar de un gran pais
-        </p>
-        <img src="assets/Fondo.png" alt="fondo NOSOTROS" class="ima_fondo" />
+        <div class="col-xs-1 col-s-1 col-m-1 col-l-1 " style="background-color: red;"">
+          <div include-html="partes/menu2.html"></div>
+        </div>
+
+        <div class="col-m-12 col-l-8">
+          <div include-html="partes/infoN1.html"></div>
+        </div>
+
+        <div class="col-m-12 col-l-4">
+          <div include-html="partes/infoN2.html"></div>
+        </div>
+      
       </div>
-    </main>
-    <footer>
-      <!-- Aquí puedes agregar el contenido del pie de página, como enlaces a redes sociales y contacto. -->
-    </footer>
-  </body_nosotros>
+    </div>
+
+    <div include-html="partes/footer.html"></div>
+
+    <script src="js/include-html.js"></script>
+  </body>
+  
 </html>
