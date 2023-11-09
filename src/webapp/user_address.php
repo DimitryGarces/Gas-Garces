@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Registro Dirección</title>
-  <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="stylesheet" href="css/style_address.css" />
   <!-- Incluye la biblioteca LeafletJS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
