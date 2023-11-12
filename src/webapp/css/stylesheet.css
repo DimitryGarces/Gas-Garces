@@ -33,7 +33,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  background: linear-gradient(150deg, rgba(210, 223, 248),rgba(18, 104, 210), rgba(38, 29, 135), rgba(0,0,0)) no-repeat center;
+  background: linear-gradient(white) no-repeat center;
   /* blaco a azul y negro */
   height: auto;
   width: auto;
@@ -44,7 +44,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: 66%;
   background: #c60303e0;
   /* Gris claro */
   border-radius: 10px;
@@ -169,6 +169,7 @@ input[type="submit"]:hover {
   transform: translate(-50%, -50%);
   width: 400px;
   background: #f2f2f2;
+  opacity: 93%;
   /* Gris claro */
   border-radius: 10px;
   padding: 20px;

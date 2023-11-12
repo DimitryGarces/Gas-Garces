@@ -6,6 +6,7 @@ if (isset($_SESSION['nombre_usuario'])) {
     $nombre_usuario = $_SESSION['nombre_usuario'];
     // Ahora puedes mostrar el nombre de usuario en tu página
     echo "Bienvenido, $nombre_usuario!";
+}
 ?>
 <!DOCTYPE html>
 <html>

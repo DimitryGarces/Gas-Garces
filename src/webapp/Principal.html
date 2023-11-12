@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Inicio</title>
-    <link rel="icon" type="imagen/png" href="assets/icon.png" />
-    <link rel="stylesheet" href="css/style_principal.css" />
-  </head>
-  <body>
-    
-    <div class="container">
-      <div class="row">
-        <h1>Gas-Garces</h1>
-        <div class="col-xs-11 col-s-11 col-m-11 col-l-11 " style="background-color: red;"">
-          <div include-html="partes/menu.html"></div>
-        </div>
 
-        <div class="col-xs-1 col-s-1 col-m-1 col-l-1 " style="background-color: red;"">
-          <div include-html="partes/menu2.html"></div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Inicio</title>
+  <link rel="icon" type="imagen/png" href="assets/icon.png" />
+  <link rel="stylesheet" href="css/style_principal.css" />
+</head>
+<body>
 
-        <div class="col-m-12 col-l-8">
-          <div include-html="partes/info1.html"></div>
-        </div>
-
-        <div class="col-m-12 col-l-4">
-          <div include-html="partes/info2.html"></div>
-        </div>
-      
-      </div>
+  <div class="container">
+    <div class="row">
+      <h1>Gas-Garces</h1>
+      <div class="col-xs-10 col-s-10 col-m-10 col-l-10 " style="background-color: red;"">
+          <div include-html=" partes/menu.html"></div>
     </div>
 
-    <div include-html="partes/footer.html"></div>
+    <div class="col-xs-2 col-s-2 col-m-2 col-l-2 " style="background-color: red;"">
+          <div include-html=" partes/menu2.html"></div>
+  </div>
+  <div class="col-m-3 col-l-3">
+    <div include-html="partes/infoServices.html"></div>
+  </div>
+  <div class="col-m-9 col-l-9">
+    <div include-html="partes/info1.html"></div>
+  </div>
 
-    <script src="js/include-html.js"></script>
-  </body>
+  <div class="col-m-12 col-l-12">
+    <div include-html="partes/info2.html"></div>
+  </div>
+  </div>
+  </div>
+
+  <div include-html="partes/footer.html"></div>
+
+  <script src="js/include-html.js"></script>
+</body>
+
 </html>

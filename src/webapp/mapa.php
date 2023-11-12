@@ -21,12 +21,6 @@
 </head>
 
 <body>
-  <footer>
-    <div class="footer-content">
-      <p>¿Tienes alguna sugerencia?</p>
-      <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
-    </div>
-  </footer>
   <!-- Script para mostrar las rutas -->
   <script src="js/rutas.js">
 
@@ -37,6 +31,6 @@
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
   <div include-html="partes/footer.html"></div>
+  <script src="js/include-html.js"></script>
 </body>
-
 </html>
