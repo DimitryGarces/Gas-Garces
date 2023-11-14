@@ -10,7 +10,6 @@ error_reporting(0);
 session_destroy();
 // Habilita la generación de todas las advertencias y errores
 error_reporting(E_ALL);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
