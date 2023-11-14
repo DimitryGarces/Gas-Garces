@@ -72,6 +72,7 @@
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
   <div include-html="partes/footer.html"></div>
+  <script src="js/include-html.js"></script>
 </body>
 
 

@@ -18,9 +18,14 @@ error_reporting(E_ALL);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Registro</title>
-  <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="stylesheet" href="css/style_principal.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    
+    <div class="col-xs-12 col-s-12 col-m-12 col-l-12">
+        <div include-html=" partes/InicioSesion_principal.html"></div>
+    </div>
+  
 </head>
-
 <body>
   <div class="sing-up_form">
     <h1>Registro</h1>
@@ -129,6 +134,7 @@ error_reporting(E_ALL);
       </script>
     </form>
   </div>
+  <script src="js/include-html.js"></script>
 </body>
 
 </html>

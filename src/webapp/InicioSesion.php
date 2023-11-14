@@ -13,30 +13,25 @@ error_reporting(E_ALL);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-S">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="wigth=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="icon" type="imagen/png" href="assets/icon.png" />
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <style>
-        body {
-            background-image: url('media/Tank.jpeg');
-            background-size: auto;
-            /* Ajusta la imagen al tamaño del cuerpo */
-            background-repeat: repeat;
-            /* Evita la repetición de la imagen */
-        }
-    </style>
-    <div class="logo">
-        <h2>Gas-Garcés</h2>
+    <meta charset="UTF-S">
+    <link rel="stylesheet" href="css/style_principal.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+
+    <div class="col-xs-12 col-s-12 col-m-12 col-l-12">
+        <div include-html=" partes/InicioSesion_principal.html"></div>
     </div>
 </head>
 
 <body>
-    <div class="formulario">
+    <div class="col-s-8 col-m-8 formulario">
         <h1>Inicio de Sesión</h1>
         <!-- Muestra el mensaje de error si existe -->
         <?php
@@ -97,11 +92,9 @@ error_reporting(E_ALL);
         <img src="media/cilindro2.jpeg" alt="Nuestra empresa en acción">
     </div>
 </body>
-<footer>
-    <div class="footer-content">
-        <p>¿Tienes alguna sugerencia?</p>
-        <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
-    </div>
-</footer>
 
 </html>
+<?php
+// Cierra la sesión
+session_destroy();
+?>
