@@ -1,0 +1,328 @@
+<!--Inicio Modal -->
+<div id="myModal" class="modal" style="display: none">
+  <h2>Dirección</h2>
+  <div id="direccionInfo"></div>
+  <label for="cantidad">Cantidad</label>
+  <input
+    type="text"
+    id="cantidad"
+    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+    pattern="[0-9]{10}"
+    maxlength="3"
+    oninvalid="this.setCustomValidity('Ejemplo teléfono: 7291234567')"
+    required
+  />
+  <span>Litros </span>
+
+  <div class="fechaPedido">
+    <label for="fechaEntrega">Fecha de entrega</label>
+    <input type="date" id="fechaEntrega" required />
+  </div>
+  <div class="rangoHora">
+    <label>Rango de horario disponible</label>
+    <select id="horaInicio"></select>
+    <select id="minutosInicio"></select>
+    <span> a </span>
+    <select id="horaFin"></select>
+    <select id="minutosFin"></select>
+  </div>
+  <button id="confirmarPedido">Hacer Pedido</button>
+</div>
+<!--Fin Modal -->
+
+<script>
+  $(document).ready(function () {
+    var direccion = [];
+
+    //Inicio de la petición json de la dirección
+    // Agrega un manejador de eventos al enlace "HACER PEDIDO"
+    $(document).on("click", "#openModal", function () {
+      console.log("entre al modal");
+      // Realiza la llamada AJAX para obtener la dirección
+      $.ajax({
+        url: "order_proccess.php",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+          //Si es exitosa almacenamos la direccion para un uso futuro
+          direccion = data; // Selecciona el primer elemento del array
+          console.log(direccion);
+          // Abre el modal cuando se obtienen los datos
+          var direccionCompleta = `Nombre: ${direccion.direccion[0].Nombre}<br>Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
+          $("#direccionInfo").html(direccionCompleta);
+
+          //Mostrar el modal
+          $("#myModal").show();
+
+          /*Cargar la fecha, para mostrar en el calendario*/
+          var localDate = new Date();
+          var Fecha =
+            localDate.getFullYear() +
+            "-" +
+            ("0" + (localDate.getMonth() + 1)).slice(-2) +
+            "-" +
+            ("0" + localDate.getDate()).slice(-2);
+          // Establecer el atributo min ósea la fecha minima para el pedido
+          var fechaEntrega = document.getElementById("fechaEntrega");
+          fechaEntrega.min = Fecha;
+
+          // Asignar el valor de la fecha actual como valor
+          fechaEntrega.value = Fecha;
+
+          /* Ahora vamos con las listas de los horarios
+           * Generar opciones para la lista de horas
+           */
+          var horaInicio = document.getElementById("horaInicio");
+          var horaFin = document.getElementById("horaFin");
+          var horaInicioLista = 8;
+          var horaFinLista = 9;
+          var minLista = 0;
+
+          if (localDate.getHours() >= 21) {
+            /*Cargar la fecha, para mostrar en el calendario con un dia de más*/
+            localDate.setDate(localDate.getDate() + 1);
+            Fecha =
+              localDate.getFullYear() +
+              "-" +
+              ("0" + (localDate.getMonth() + 1)).slice(-2) +
+              "-" +
+              ("0" + localDate.getDate()).slice(-2);
+            // Establecer el atributo min ósea la fecha minima para el pedido con un dia más
+            fechaEntrega.min = Fecha;
+
+            // Asignar el valor de la fecha actual como valor
+            fechaEntrega.value = Fecha;
+
+            /*
+             * Ahora vamos con las modificación de horas, en este caso se muestra el horario completo,
+             * pero con un dia adelantado
+             */
+
+            console.log(localDate.getHours(), localDate.getMinutes());
+          } else if (localDate.getHours() >= 8) {
+            /*
+             * Ahora vamos con las modificación de horas, en este caso se muestra el horario
+             * a partir de la hora actual.
+             */
+            horaInicioLista = localDate.getHours();
+            horaFinLista = localDate.getHours() + 1;
+            minLista = localDate.getMinutes();
+
+            console.log(
+              "Que pasa papu: " + horaInicioLista + ", " + horaFinLista
+            );
+            console.log("Bonjour: " + minLista);
+          }
+
+          // Manejador de eventos para el cambio en la fecha de entrega y asi controla las horas
+          document
+            .getElementById("fechaEntrega")
+            .addEventListener("change", function () {
+              var fechaCal = this.value;
+              var todaysDate = new Date();
+              var formatTD =
+                todaysDate.getFullYear() +
+                "-" +
+                ("0" + (todaysDate.getMonth() + 1)).slice(-2) +
+                "-" +
+                ("0" + todaysDate.getDate()).slice(-2);
+              if (formatTD != fechaCal) {
+                console.log("Ya me aburri :((");
+                horaInicioLista = 8;
+                horaFinLista = 9;
+                minLista = 0;
+              } else {
+                horaInicioLista = localDate.getHours();
+                horaFinLista = localDate.getHours() + 1;
+                minLista = localDate.getMinutes();
+              }
+              console.log(
+                "Ayuda me estan matandoooooo :0",
+                horaInicioLista,
+                horaFinLista,
+                minLista
+              );
+              // Limpiar opciones actuales en caso de tener
+              horaInicio.innerHTML = "";
+              horaFin.innerHTML = "";
+              minutosInicio.innerHTML = "";
+              minutosFin.innerHTML = "";
+              horasMinutosLista();
+            });
+
+          /*
+           * Ahora si no se entra a los if se muestra el horario completo
+           */
+
+          // Se ejecuta la funcion por defecto
+          horasMinutosLista();
+
+          function horasMinutosLista() {
+            for (var i = horaInicioLista; i <= 20; i++) {
+              var optionInicio = document.createElement("option");
+              optionInicio.value = i;
+              optionInicio.text = i < 10 ? "0" + i : i.toString();
+              horaInicio.add(optionInicio);
+            }
+
+            for (var i = horaFinLista; i <= 21; i++) {
+              var optionFin = document.createElement("option");
+              optionFin.value = i;
+              optionFin.text = i < 10 ? "0" + i : i.toString();
+              horaFin.add(optionFin);
+            }
+
+            // Generar opciones para la lista de minutos
+            var minutosInicio = document.getElementById("minutosInicio");
+            var minutosFin = document.getElementById("minutosFin");
+
+            for (var j = minLista; j <= 59; j++) {
+              var optionMinInicio = document.createElement("option");
+              optionMinInicio.value = j;
+              optionMinInicio.text = j < 10 ? "0" + j : j.toString();
+              minutosInicio.add(optionMinInicio);
+
+              var optionMinFin = document.createElement("option");
+              optionMinFin.value = j;
+              optionMinFin.text = j < 10 ? "0" + j : j.toString();
+              minutosFin.add(optionMinFin);
+            }
+          }
+
+          // Manejador de eventos para el cambio en la hora de inicio
+          document
+            .getElementById("horaInicio")
+            .addEventListener("change", function () {
+              actualizarHorasFin();
+            });
+
+          // Manejador de eventos para el cambio en los minutos de inicio
+          document
+            .getElementById("minutosInicio")
+            .addEventListener("change", function () {
+              actualizarMinutosFin();
+            });
+
+          // Manejador de eventos para el cambio en la hora de fin
+          document
+            .getElementById("horaFin")
+            .addEventListener("change", function () {
+              actualizarMinutosFin();
+            });
+
+          // Función para actualizar las opciones de horaFin
+          function actualizarHorasFin() {
+            var horaInicioValue = parseInt(
+              document.getElementById("horaInicio").value
+            );
+            var horaFin = document.getElementById("horaFin");
+
+            // Limpiar opciones actuales
+            horaFin.innerHTML = "";
+
+            // Generar nuevas opciones para la lista de horas fin
+            for (var i = horaInicioValue + 1; i <= 21; i++) {
+              var optionFin = document.createElement("option");
+              optionFin.value = i;
+              optionFin.text = i < 10 ? "0" + i : i.toString();
+              horaFin.add(optionFin);
+            }
+          }
+
+          // Función para actualizar las opciones de minutosFin
+          function actualizarMinutosFin() {
+            var horaInicioValue = parseInt(
+              document.getElementById("horaInicio").value
+            );
+            var horaFinValue = parseInt(
+              document.getElementById("horaFin").value
+            );
+            var minutosInicioValue = parseInt(
+              document.getElementById("minutosInicio").value
+            );
+            var minutosFin = document.getElementById("minutosFin");
+
+            // Si la hora de fin es igual a la hora de inicio, ajustar los minutos fin
+            if (horaInicioValue + 1 == horaFinValue) {
+              // Limpiar opciones actuales
+              minutosFin.innerHTML = "";
+
+              // Generar nuevas opciones para la lista de minutos fin
+              for (var j = minutosInicioValue; j <= 59; j++) {
+                var optionMinFin = document.createElement("option");
+                optionMinFin.value = j;
+                optionMinFin.text = j < 10 ? "0" + j : j.toString();
+                minutosFin.add(optionMinFin);
+              }
+            } else {
+              // Limpiar opciones actuales
+
+              // Generar opciones para la lista de minutos fin
+              minutosFin.innerHTML = "";
+              for (var j = 0; j <= 59; j++) {
+                var optionMinFin = document.createElement("option");
+                optionMinFin.value = j;
+                optionMinFin.text = j < 10 ? "0" + j : j.toString();
+                minutosFin.add(optionMinFin);
+              }
+            }
+          }
+        },
+        error: function (xhr, status, error) {
+          console.log("Error al cargar los datos: " + error);
+        },
+      });
+    });
+
+    // Confirmar el pedido
+    $(document).on("click", "#confirmarPedido", function () {
+      var cantidad = $("#cantidad").val();
+      if (cantidad !== "" && cantidad >= 5) {
+        // Elemento input de fecha
+        var fechaEntrega = document.getElementById("fechaEntrega");
+        //Almacenamos la fecha en el formato dd/mm/yy
+        var partes = fechaEntrega.value.split("-");
+        var fechaFormateada =
+          partes[2] + "/" + partes[1] + "/" + partes[0].substring(2);
+
+        // Elemnto input de hora inicio
+        var horaIni = document.getElementById("horaInicio").value;
+        var minIni = document.getElementById("minutosInicio").value;
+        var horarioInicio = "";
+
+        if (horaIni < 10) {
+          horaIni = "0" + horaIni;
+        }
+        if (minIni < 10) {
+          minIni = "0" + minIni;
+        }
+        horarioInicio = horaIni + ":" + minIni;
+
+        // Elemento input de hora fin
+        var horaF = document.getElementById("horaFin").value;
+        var minF = document.getElementById("minutosFin").value;
+        var horarioFin = "";
+
+        if (horaF < 10) {
+          horaF = "0" + horaF;
+        }
+        if (minIni < 10) {
+          minF = "0" + minF;
+        }
+        horarioFin = horaF + ":" + minF;
+
+        // Realizar el pedido aquí (puedes enviar la cantidad al servidor si es necesario)
+        alert("Pedido realizado");
+        console.log(fechaFormateada, horarioInicio, horarioFin, cantidad);
+
+        // Cerrar el modal
+        $("#myModal").hide();
+
+        // Limpiar el valor del input de cantidad con jQuery
+        $("#cantidad").val("");
+      } else {
+        alert("Por favor, ingresa la cantidad.");
+      }
+    });
+  });
+</script>

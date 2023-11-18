@@ -15,29 +15,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Consulta SQL para verificar las credenciales de un usuario normal con sentencia preparada
-        $sql_usuario = "SELECT Usuario.Id_Usuario
+        $sql_id_datos = "SELECT Usuario.Id_Usuario
         FROM Usuario
         INNER JOIN DatosPersonales ON Usuario.Id_Datos = DatosPersonales.Id_Datos
         WHERE DatosPersonales.Usuario = ? 
         AND DatosPersonales.Contrasenia = ?";
 
         // Prepara la consulta para el usuario normal
-        $stmt_usuario = mysqli_prepare($con, $sql_usuario);
+        $stmt_id_datos = mysqli_prepare($con, $sql_id_datos);
 
         // Vincula los parámetros
-        mysqli_stmt_bind_param($stmt_usuario, "ss", $nombre_usuario, $contraseña);
+        mysqli_stmt_bind_param($stmt_id_datos, "ss", $nombre_usuario, $contraseña);
 
         // Ejecuta la consulta para el usuario normal
-        mysqli_stmt_execute($stmt_usuario);
+        mysqli_stmt_execute($stmt_id_datos);
 
         // Almacena el resultado
-        mysqli_stmt_store_result($stmt_usuario);
+        mysqli_stmt_store_result($stmt_id_datos);
 
         // Verifica si se encontró un usuario normal con las credenciales proporcionadas
-        if (mysqli_stmt_num_rows($stmt_usuario) == 1) {
+        if (mysqli_stmt_num_rows($stmt_id_datos) == 1) {
             // Obtiene el Id_Usuario
-            mysqli_stmt_bind_result($stmt_usuario, $id_usuario);
-            mysqli_stmt_fetch($stmt_usuario);
+            mysqli_stmt_bind_result($stmt_id_datos, $id_usuario);
+            mysqli_stmt_fetch($stmt_id_datos);
 
             // Almacena las iniciales en la variable de sesión
             $_SESSION['id_usuario'] = $id_usuario;
@@ -71,11 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nombre_usuario'] = $iniciales;
 
             // Cierra las consultas preparadas
-            mysqli_stmt_close($stmt_usuario);
+            mysqli_stmt_close($stmt_id_datos);
             mysqli_stmt_close($stmt_iniciales);
 
-            // Credenciales válidas para usuario normal, redirecciona a la página de inicio de usuario normal
-            header("Location: Principal.html");
+            // Credenciales válidas para usuario normal, redirecciona validar credenciales de un usuario
+            header("Location: validate_cre_use.php");
             exit();
         }
 
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             mysqli_stmt_close($stmt_iniciales);
-            mysqli_stmt_close($stmt_usuario);
+            mysqli_stmt_close($stmt_id_datos);
             mysqli_stmt_close($stmt_empleado);
             // Credenciales válidas para empleado, redirecciona a la página de inicio de empleado
             header("Location: mapa.php");
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
         // Cierra las consultas preparadas
-        mysqli_stmt_close($stmt_usuario);
+        mysqli_stmt_close($stmt_id_datos);
         mysqli_stmt_close($stmt_iniciales);
         mysqli_stmt_close($stmt_empleado);
     } catch (Exception $e) {

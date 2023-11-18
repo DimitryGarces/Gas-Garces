@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($stmt_insertar_usuario_direccion);
         }
         // Redirige a la ventana de registro
-        header("Location: Principal.php");
+        header("Location: validate_cre_use.php");
         exit();
     } catch (Exception $e) {
         // Manejar la excepción de la base de datos, por ejemplo, registrándola o mostrándola

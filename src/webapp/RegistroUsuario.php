@@ -1,13 +1,15 @@
 <?php
 session_start();
-// Cierra la sesión desasociando sus variables
-unset($_SESSION['nombre_usuario']);
-unset($_SESSION['id_usuario']);
-$active_user = false;
+
 // Desactiva la generación de advertencias y errores
 error_reporting(0);
+
+// Desvincular todas las variables de sesión
+session_unset();
+
 // Cierra la sesión
 session_destroy();
+
 // Habilita la generación de todas las advertencias y errores
 error_reporting(E_ALL);
 ?>
@@ -19,13 +21,14 @@ error_reporting(E_ALL);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Registro</title>
   <link rel="stylesheet" href="css/style_principal.css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
-    
-    <div class="col-xs-12 col-s-12 col-m-12 col-l-12">
-        <div include-html=" partes/InicioSesion_principal.html"></div>
-    </div>
-  
+  <link rel="stylesheet" href="css/stylesheet.css" />
+
+  <div class="col-xs-12 col-s-12 col-m-12 col-l-12">
+    <div include-html=" partes/InicioSesion_principal.html"></div>
+  </div>
+
 </head>
+
 <body>
   <div class="sing-up_form">
     <h1>Registro</h1>

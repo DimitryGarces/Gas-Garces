@@ -42,6 +42,7 @@ SELECT
     d.Latitud,
     d.Longitud
 FROM Direccion d
+INNER JOIN Usuario_Direccion ud ON ud.Id_Direccion  = d.Id_Direccion
 INNER JOIN Colonia c ON d.Colonia = c.Id_Colonia
 INNER JOIN CodigoPost cp ON c.ID_Codigo = cp.Id_Codigo
 INNER JOIN Municipio m ON cp.Id_Municipio = m.Id_Municipio;

@@ -26,6 +26,7 @@
                             console.log("xd");
                             // Cargar el menú para active_user verdadero
                             $(".status_session").load("partes/menu3.html");
+                            $(".modDir").load("direccion/modalDir.html");
                         } else {
                             console.log("no");
                             // Cargar el menú para active_user falso
@@ -39,7 +40,7 @@
             });
 
         </script>
-        <div class="col-xs-2 col-s-2 col-m-2 col-l-2 " style="background-color: red;"">
+        <div class="col-xs-2 col-s-2 col-m-2 col-l-2 " style="background-color: red; ">
           <div class="status_session" include-html=""></div>
         </div>
 
@@ -60,6 +61,10 @@
   <div include-html="partes/footer.html"></div>
 
   <script src="js/include-html.js"></script>
+  
+  <div class="col-m-9 col-l-9">
+    <div class="modDir" include-html=""></div>
+  </div>
 </body>
 
 </html>

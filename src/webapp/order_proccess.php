@@ -21,10 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         CONCAT(c.Nombre, ' ', cp.Codigo, ' ', m.Nombre) AS Colonia,
         d.Referencia
         FROM Direccion d
+        INNER JOIN Usuario_Direccion ud ON ud.Id_Direccion  = d.Id_Direccion
         INNER JOIN Colonia c ON d.Colonia = c.Id_Colonia
         INNER JOIN CodigoPost cp ON c.ID_Codigo = cp.Id_Codigo
         INNER JOIN Municipio m ON cp.Id_Municipio = m.Id_Municipio
-        WHERE d.Id_Direccion = $id_usuario_dir";
+        WHERE ud.Id_Usuario = $id_usuario_dir";
 
 
         $result = mysqli_query($con, $sql_dir_use);

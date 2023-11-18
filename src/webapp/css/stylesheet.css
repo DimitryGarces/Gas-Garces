@@ -512,3 +512,12 @@ input[type="submit"]:hover {
   margin-top: auto;
   margin-right: 10%;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 25%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #000;
+}

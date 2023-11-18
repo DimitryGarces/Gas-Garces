@@ -1,6 +1,6 @@
 <?php
 
-try {
+/*try {
     $con = mysqli_init();
     mysqli_ssl_set($con, NULL, NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
     mysqli_real_connect($con, "gasgarces.mysql.database.azure.com", "gasgarces", "bleach123!", "gasgarces", 3306, MYSQLI_CLIENT_SSL);
@@ -11,6 +11,16 @@ try {
 } catch (Exception $e) {
     // Manejar la excepción, por ejemplo, registrándola o mostrándola
     die($e->getMessage());
-}
+}*/
+try {
+    $con = mysqli_init();
+    mysqli_real_connect($con, "localhost", "gasgarces", "1234", "gasgarces", 3806);
 
+    if ($con->connect_error) {
+        throw new Exception("Error de conexión a la base de datos: " . $con->connect_error);
+    }
+} catch (Exception $e) {
+    // Manejar la excepción, por ejemplo, registrándola o mostrándola
+    die($e->getMessage());
+}
 ?>
