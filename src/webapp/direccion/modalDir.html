@@ -1,7 +1,32 @@
 <!--Inicio Modal -->
 <div id="myModal" class="modal" style="display: none">
-  <h2>Dirección</h2>
-  <div id="direccionInfo"></div>
+  <h2 id="titulo1"></h2>
+  <div class="seldir">
+    <div id="direccionInfo1"></div>
+    <input
+      type="radio"
+      id="direccion1"
+      name="direccion"
+      style="display: none"
+    />
+    <h2 id="titulo2"></h2>
+    <div id="direccionInfo2"></div>
+    <input
+      type="radio"
+      id="direccion2"
+      name="direccion"
+      style="display: none"
+    />
+    <h2 id="titulo3"></h2>
+    <div id="direccionInfo3"></div>
+    <input
+      type="radio"
+      id="direccion3"
+      name="direccion"
+      style="display: none"
+    />
+  </div>
+
   <label for="cantidad">Cantidad</label>
   <input
     type="text"
@@ -47,9 +72,47 @@
           //Si es exitosa almacenamos la direccion para un uso futuro
           direccion = data; // Selecciona el primer elemento del array
           console.log(direccion);
-          // Abre el modal cuando se obtienen los datos
-          var direccionCompleta = `Nombre: ${direccion.direccion[0].Nombre}<br>Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
-          $("#direccionInfo").html(direccionCompleta);
+
+          // Obtén el número de filas en el array direccion.direccion
+          var numeroDeFilas = direccion.direccion.length;
+
+          if (numeroDeFilas == 1) {
+            //Una dirección
+            var tituloInfo1 = direccion.direccion[0].Nombre;
+            var direccionCompleta1 = `Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
+            $("#titulo1").html(tituloInfo1);
+            $("#direccionInfo1").html(direccionCompleta1);
+            $("#direccion1").show();
+          } else if (numeroDeFilas == 2) {
+            //Dos direcciones
+            var tituloInfo1 = direccion.direccion[0].Nombre;
+            var tituloInfo2 = direccion.direccion[1].Nombre;
+            var direccionCompleta1 = `Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
+            var direccionCompleta2 = `Calle: ${direccion.direccion[1].Calle}<br>Colonia: ${direccion.direccion[1].Colonia}<br>Referencia: ${direccion.direccion[1].Referencia}`;
+            $("#titulo1").html(tituloInfo1);
+            $("#direccionInfo1").html(direccionCompleta1);
+            $("#direccion1").show();
+            $("#titulo2").html(tituloInfo2);
+            $("#direccionInfo2").html(direccionCompleta2);
+            $("#direccion2").show();
+          } else {
+            //Tres Direcciones
+            var tituloInfo1 = direccion.direccion[0].Nombre;
+            var tituloInfo2 = direccion.direccion[1].Nombre;
+            var tituloInfo3 = direccion.direccion[2].Nombre;
+            var direccionCompleta1 = `Calle: ${direccion.direccion[0].Calle}<br>Colonia: ${direccion.direccion[0].Colonia}<br>Referencia: ${direccion.direccion[0].Referencia}`;
+            var direccionCompleta2 = `Calle: ${direccion.direccion[1].Calle}<br>Colonia: ${direccion.direccion[1].Colonia}<br>Referencia: ${direccion.direccion[1].Referencia}`;
+            var direccionCompleta3 = `Calle: ${direccion.direccion[2].Calle}<br>Colonia: ${direccion.direccion[2].Colonia}<br>Referencia: ${direccion.direccion[2].Referencia}`;
+            $("#titulo1").html(tituloInfo1);
+            $("#direccionInfo1").html(direccionCompleta1);
+            $("#direccion1").show();
+            $("#titulo2").html(tituloInfo2);
+            $("#direccionInfo2").html(direccionCompleta2);
+            $("#direccion2").show();
+            $("#titulo3").html(tituloInfo3);
+            $("#direccionInfo3").html(direccionCompleta3);
+            $("#direccion3").show();
+          }
 
           //Mostrar el modal
           $("#myModal").show();
@@ -276,6 +339,30 @@
 
     // Confirmar el pedido
     $(document).on("click", "#confirmarPedido", function () {
+      // Verificar si al menos un radio button está marcado
+      var direccionSeleccionada =
+        $("input[name='direccion']:checked").length > 0;
+
+      if (!direccionSeleccionada) {
+        // Mostrar un alert si no se ha seleccionado ninguna dirección
+        alert("Por favor, selecciona una dirección antes de hacer un pedido.");
+        return; // Detener la ejecución si no hay dirección seleccionada
+      }
+
+      // Obtener el valor del Id_Direccion según el radio button seleccionado
+      var numeroDeFilas = direccion.direccion.length;
+      var id_direccion;
+      if (numeroDeFilas == 1) {
+        id_direccion = direccion.direccion[0].Id_Direccion;
+      } else {
+        for (var i = 1; i <= numeroDeFilas; i++) {
+          if ($("#direccion" + i).prop("checked")) {
+            id_direccion = direccion.direccion[i - 1].Id_Direccion;
+            break;
+          }
+        }
+      }
+
       var cantidad = $("#cantidad").val();
       if (cantidad !== "" && cantidad >= 5) {
         // Elemento input de fecha
@@ -283,8 +370,7 @@
         //Almacenamos la fecha en el formato dd/mm/yy
         var partes = fechaEntrega.value.split("-");
         var fechaFormateada =
-          partes[2] + "/" + partes[1] + "/" + partes[0].substring(2);
-
+          partes[0].substring(2) + "/" + partes[1] + "/" + partes[2];
         // Elemnto input de hora inicio
         var horaIni = document.getElementById("horaInicio").value;
         var minIni = document.getElementById("minutosInicio").value;
@@ -311,17 +397,45 @@
         }
         horarioFin = horaF + ":" + minF;
 
-        // Realizar el pedido aquí (puedes enviar la cantidad al servidor si es necesario)
-        alert("Pedido realizado");
-        console.log(fechaFormateada, horarioInicio, horarioFin, cantidad);
-
         // Cerrar el modal
         $("#myModal").hide();
 
         // Limpiar el valor del input de cantidad con jQuery
         $("#cantidad").val("");
+
+        // Limpiar la dirección seleccionada
+        $("input[name='direccion']").prop("checked", false);
+
+        // Limpiar las listas, si no se empizan a repetir con más pedidos:
+        horaInicio.innerHTML = "";
+        horaFin.innerHTML = "";
+        minutosInicio.innerHTML = "";
+        minutosFin.innerHTML = "";
+
+        // Realizar la solicitud AJAX para enviar los datos a order_proccess.php
+        $.ajax({
+          url: "order_proccess.php",
+          type: "POST",
+          data: {
+            fecha: fechaFormateada,
+            horarioInicio: horarioInicio,
+            horarioFin: horarioFin,
+            cantidad: cantidad,
+            id_direccion: id_direccion,
+          },
+          success: function (response) {
+            // Manejar la respuesta del servidor
+            console.log("Respuesta del servidor:", response);
+          },
+          error: function (xhr, status, error) {
+            console.log("Error al enviar los datos al servidor:", error);
+          },
+        });
+
+        // Realizar el pedido aquí (puedes enviar la cantidad al servidor si es necesario)
+        alert("Pedido realizado");
       } else {
-        alert("Por favor, ingresa la cantidad.");
+        alert("Por favor, ingresa la cantidad de gas.");
       }
     });
   });
