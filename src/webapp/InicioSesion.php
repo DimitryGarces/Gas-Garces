@@ -70,28 +70,8 @@ error_reporting(E_ALL);
         ?>
 
     </div>
-    <div class="about-us">
-        <h2>Acerca de Nosotros</h2>
-        <p>Somos una empresa líder en la distribución de gas LP en el Estado de México. Nuestra misión es proporcionar
-            un servicio confiable y seguro a nuestros clientes. Contamos con años de experiencia en la industria y un
-            equipo de profesionales comprometidos con la seguridad y la satisfacción del cliente.</p>
-        <img src="media/element.jpg" alt="Nuestra empresa en acción">
-    </div>
-    <div class="zones">
-        <h2>¿Qué localidades abarcamos?</h2>
-        <p>Hasta el momento solo tenemos covertura en 3 municipios del Estado de Mexico.</p>
-        <p>Zinacantepec</p>
-        <p>Toluca</p>
-        <p>Metepec</p>
-        <img src="media/MapaZoom.png" alt="Nuestra empresa en acción">
-    </div>
-    <div class="services">
-        <h2>Servicios para</h2>
-        <p>Cilindros</p>
-        <img src="media/cilindro2.jpeg" alt="Nuestra empresa en acción">
-        <p>Estacionarios</p>
-        <img src="media/cilindro2.jpeg" alt="Nuestra empresa en acción">
-    </div>
+    <script src="js/include-html.js"></script>
+
 </body>
 
 </html>
