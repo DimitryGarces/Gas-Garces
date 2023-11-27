@@ -1,10 +1,10 @@
 footer {
   background-color: #333;
-  color: #fff;
+  color: #050505;
   text-align: center;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 1200px;
 }
 
 .footer-content {
@@ -16,7 +16,7 @@ footer {
 
 /* Estilos para los enlaces en el pie de página */
 footer a {
-  color: #fff;
+  color: #070707;
   text-decoration: none;
 }
 
@@ -51,7 +51,7 @@ body {
 .formulario h1 {
   text-align: center;
   padding: 0 0 20px 0;
-  border-bottom: 1px solid #c1c1c1d2;
+  border-bottom: 1px solid #020202d2;
   /* Gris más oscuro */
 }
 
@@ -162,15 +162,15 @@ input[type="submit"]:hover {
 
 .sing-up_form {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   width: 66%;
   background: #f2f2f2;
   opacity: 93%;
   /* Gris claro */
   border-radius: 10px;
-  padding: 20px;
+  padding: 25px;
   /* Añadido para más espacio interno */
   box-sizing: border-box;
   /* Asegura que el padding no afecte al ancho total */
@@ -178,7 +178,7 @@ input[type="submit"]:hover {
 
 .sing-up_form h1 {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 0 0 20px 0;
   /* Espaciado inferior para separar el título de los campos */
   border-bottom: 1px solid #c1c1c1;
   /* Gris más oscuro */
@@ -317,7 +317,7 @@ input[type="submit"]:hover {
   left: 50%;
   transform: translate(-40%, 160%);
   width: 400px;
-  background: #f2f2f2e0;
+  background: rgba(252, 251, 251, 0.878);
   /* Gris claro */
   border-radius: 10px;
   margin-bottom: 50px;
@@ -423,9 +423,10 @@ input[type="submit"]:hover {
   /* Espacio superior entre imágenes y texto */
   margin-left: 15px;
 }
+
 .navbar_inicio {
   background-color: #da0700ef; /* Color vino */
-  padding: 10px 0; /* Ajuste el espaciado interior según sea necesario */
+  padding: 1% 0; /* Ajuste el espaciado interior según sea necesario */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para un aspecto metálico */
 }
 
@@ -437,25 +438,28 @@ input[type="submit"]:hover {
 
 .ima_bar {
   border-radius: 50%;
-  margin-left: 15px;
-  margin-right: 15px;
-  width: 48px; /* Ajusta el ancho deseado */
-  height: 30px; /* Ajusta la altura deseada */
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 3%; /* Ajusta el ancho deseado */
+  height: 3%; /* Ajusta la altura deseada */
 }
 
 .navbar_inicio a:not(:last-child) {
-  color: #fff; /* Texto en color blanco */
+  color: #080808; /* Texto en color blanco */
   text-decoration: none;
-  margin: 0 15px; /* Ajusta el espacio horizontal entre los elementos del menú */
+  float: left; /* Alinear a la derecha */
+  margin-left: 2%; /* Establece un margen derecho para el último enlace */
+  margin-right: 2%; /* Establece un margen derecho para el último enlace */
   font-size: 18px;
   transition: color 0.3s ease; /* Transición para el color del texto */
+  margin-top: 12px !important; /* Baja la posición en 5px con !important */
 }
 
 .navbar_inicio a:last-child {
-  color: #fff; /* Texto en color blanco */
+  color: #080808; /* Texto en color blanco */
   text-decoration: none;
   float: right; /* Alinear a la derecha */
-  margin-right: 25px; /* Establece un margen derecho para el último enlace */
+  margin-right: 2%; /* Establece un margen derecho para el último enlace */
   font-size: 18px;
   transition: color 0.3s ease; /* Transición para el color del texto */
   margin-top: 12px !important; /* Baja la posición en 5px con !important */
@@ -463,33 +467,34 @@ input[type="submit"]:hover {
 
 .orden_principal {
   color: #fff;
-  margin-top: 20px;
+  margin-top: 2%;
   font-family: Arial, sans-serif;
 }
 
 .orden_principal h1 {
-  color: #fff;
+  color: #fcfbfb;
   width: 200%;
   font-size: 43px;
   font-weight: bold;
   font-family: Impact, Charcoal, sans-serif;
-  margin-top: -308px;
-  margin-left: 655px;
+  margin-top: -30%;
+  margin-left: 50%;
 }
 
 .orden_principal h2 {
-  color: #fff;
+  color: #fcfbfb;
   width: 200%;
   font-size: 36px;
   font-weight: bold;
   font-family: Impact, Charcoal, sans-serif;
-  margin-left: 655px;
+  margin-left: 50%;
 }
 
 .principal_parr_2 {
+  color: #fcfbfb;
   font-size: 18px;
   margin-top: -20px;
-  margin-left: 655px;
+  margin-left: 50%;
   max-width: 540px;
   text-align: justify;
 }
@@ -498,7 +503,7 @@ input[type="submit"]:hover {
   color: #060606;
   font-size: 22px;
   margin-top: -20px;
-  margin-left: 655px;
+  margin-left: 50%;
   max-width: 540px;
   text-align: justify;
 }
@@ -511,13 +516,4 @@ input[type="submit"]:hover {
   font-family: Impact, Charcoal, sans-serif;
   margin-top: auto;
   margin-right: 10%;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  width: 25%;
-  height: 50%;
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #000;
 }

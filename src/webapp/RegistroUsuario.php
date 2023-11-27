@@ -20,10 +20,12 @@ error_reporting(E_ALL);
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Registro</title>
+  <link rel="icon" type="imagen/png" href="assets/icon.png" />
   <link rel="stylesheet" href="css/style_principal.css" />
   <link rel="stylesheet" href="css/stylesheet.css" />
-  <div class="col-xs-12 col-s-12 col-m-12 col-l-12 " style="background-color: red;"">
-      <div include-html=" partes/menu.html"></div>
+
+  <div class="col-xs-12 col-s-12 col-m-12 col-l-12">
+    <div include-html=" partes/InicioSesion_principal.html"></div>
   </div>
 </head>
 

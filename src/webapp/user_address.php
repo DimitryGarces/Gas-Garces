@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Registro Dirección</title>
+  <link rel="stylesheet" href="css/style_principal.css" />
   <link rel="stylesheet" href="css/style_address.css" />
   <!-- Incluye la biblioteca LeafletJS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -12,11 +13,14 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8""></script>
   <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+  <div class="col-xs-12 col-s-12 col-m-12 col-l-12 " style="background-color: red;"">
+          <?php include('partes/menuN.html'); ?>
+  </div>
 </head>
 
 <body>
-  <div class=" use_add_form">
+  <div class=" col-s-8 col-m-8 ">
+    <div class=" use_add_form">
     <h1>Registro Dirección</h1>
     <form action="address_proccess.php" method="post">
       <div class="user_data">
@@ -186,10 +190,11 @@
       </script>
     </form>
   </div>
+  </div>
   <!-- Script para mostrar las rutas -->
   <script src="js/direccion.js"></script>
   <!-- Contenedor para el mapa -->
   <div id="map-container-d"></div>
-</body>
+  </body>
 
 </html>

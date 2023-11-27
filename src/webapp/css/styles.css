@@ -37,12 +37,14 @@ footer a:hover {
 
 /* styles.css */
 #map-container-d {
+  top: 20%;
+  left: 0%;
+  transform: translate(0%, -5%);
   width: 50%;
   height: 60%;
   /* Resta el alto del footer (40px) del 100vh */
   position: absolute;
-  bottom: 140px;
-  /* Asegura que el mapa comience desde el borde inferior del footer */
+  bottom: 120px;
 }
 
 body {
