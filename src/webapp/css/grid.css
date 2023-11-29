@@ -1,5 +1,5 @@
 .container{
-    max-width: 1290px;
+    max-width: auto;
     margin: 0 auto;
 
 }
@@ -12,7 +12,7 @@
 
 [class*="col-"]{
     float: left;
-    padding: 10px;
+    padding: 1px;
     width: 100%;
 }
 
