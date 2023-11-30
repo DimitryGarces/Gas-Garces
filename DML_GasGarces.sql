@@ -673,18 +673,18 @@ INSERT INTO DATOSPERSONALES (Nombre,ApellidoP,Usuario,Contrasenia,Telefono,Edad,
 VALUES ("Arturo","Garces","Tupsi","123",7222335092,38,"GAMD01126HMCRRGA6");
 
 TABLA Usuario
-INSERT INTO USUARIO (Id_Usuario,Id_Datos) VALUES (22,22);
+INSERT INTO USUARIO (Id_Usuario,Id_Datos) VALUES (2,2);
 
 INSERT INTO USUARIO (Id_Usario,Id_Datos) VALUES (23,23);
 
 TABLA Usuario_Direccion
 
-INSERT INTO Usuario_Direccion (Id_Usuario, Id_Direccion) VALUES(23,2);
+INSERT INTO Usuario_Direccion (Id_Usuario, Id_Direccion) VALUES(2,2);
 
 TABLA Empleado
 INSERT INTO EMPLEADO
 (Id_Estatus, Id_Datos, Id_Direccion, Id_Pipa, RFC, HorarioInicio, HorarioFin)
-VALUES(1, 22, 1, 'PRUEBA', 'GAGA920408EL6', '07:00', '17:00');
+VALUES(1, 2, 2, 'PRUEBA', 'GAGA920408EL6', '07:00', '17:00');
 
 INSERT INTO EMPLEADO
 (Id_Estatus, Id_Datos, Id_Direccion, Id_Pipa, RFC, HorarioInicio, HorarioFin)

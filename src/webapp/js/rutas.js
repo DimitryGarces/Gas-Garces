@@ -114,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }));
     });
     window.alert('Espera mientras trazamos tu ruta!');
+    const mapContainer = document.getElementById("map-container");
+    if (mapContainer) {
+      mapContainer.style.width = "100%";
+    }
+    document.getElementById("contenedor-info").style.display = "none";
   });
   // Agrega eventos a los botones Aceptar y Rechazar
   document.getElementById("btn-aceptar").addEventListener("click", function () {

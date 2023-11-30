@@ -43,13 +43,7 @@
 </head>
 
 <body>
-  <footer>
-    <div class=" footer-content">
-      <p>¿Tienes alguna sugerencia?</p>
-      <p>Envíenos un correo a: <a href="mailto:gasgarces@gmail.com">gasgarces@gmail.com</a></p>
-    </div>
-  </footer>
-  <!-- Script para mostrar las rutas -->
+  
   <script src="js/rutas.js">
   </script>
 
@@ -71,7 +65,7 @@
     <button id="btn-rechazar">Rechazar</button>
   </div>
   <button class="ubicacion-button" id="obtener-ubicacion">Obtener Ubicación</button>
-  <div include-html="partes/footer.html"></div>
+  <button class="ruta-button" id="ruta-ubicacion">Obtener Ruta</button>
   <script src="js/include-html.js"></script>
 </body>
 
