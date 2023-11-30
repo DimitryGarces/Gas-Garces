@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <h1>Gas-Garces</h1>
-      <div class="col-xs-12 col-s-12 col-m-10 col-l-10 " style="background-color: red;"">
+      <div class="col-xs-12 col-s-12 col-m-10 col-m-10 col-l-10 " style="background-color: red;"">
           <div include-html=" partes/menu.html"></div>
     </div>
     <script>
@@ -33,6 +33,18 @@
               console.log("no");
               // Cargar el menú para active_user falso
               $(".status_session").load("partes/menu2.html");
+              console.log("Usuario no activo");
+              // Cambiar el comportamiento del enlace si el usuario no está activo
+              $("#addressLink").attr("href", "#"); // Cambia el href a algo no válido o a #
+              $("#addressLink").on("click", function (e) {
+                e.preventDefault();
+                alert("Por favor, inicia sesión para registrar una dirección");
+              });
+              $("#openModal").on("click", function (e) {
+                e.preventDefault();
+                alert("Por favor, inicia sesión para hacer un pedido");
+              });
+              
             }
           },
           error: function (xhr, status, error) {
