@@ -1,5 +1,4 @@
 <?php
-
 try {
     $con = mysqli_init();
     mysqli_ssl_set($con, NULL, NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
@@ -12,5 +11,4 @@ try {
     // Manejar la excepción, por ejemplo, registrándola o mostrándola
     die($e->getMessage());
 }
-
 ?>
